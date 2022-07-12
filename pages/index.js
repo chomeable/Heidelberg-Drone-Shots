@@ -14,6 +14,13 @@ export default function Home() {
           e.style = "transition: 1500ms; transform: scale(1);"
         })
       }
+      if (scrollTop < 440 || scrollTop > 1453) {
+        document.querySelectorAll('#row').forEach(e => {
+          e.style = "transition: 750ms; transform: scale(0);"
+        })
+      }
+
+      console.log(scrollTop)
     }
   }, [])
 
@@ -28,11 +35,11 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.section}>
           <h1 className={styles.title}>
-            Willkommen bei <a href="/">Heidelberg Drone Shots</a>
+            Willkommen bei <a href="/">droneshot heidelberg</a>
           </h1>
 
           <p className={styles.description}>
-            Professionelle Drohnenaufnahmen in freier und geschlossener Umgebungen
+            Professionelle Drohnenaufnahmen in freien oder geschlossenen Umgebungen
           </p>
 
           <div className={styles.wave}>
