@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useLayoutEffect, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
@@ -35,7 +36,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.section}>
           <h1 className={styles.title}>
-            Willkommen bei <a href="/">droneshot heidelberg</a>
+            Willkommen bei <Link href="/">droneshot heidelberg</Link>
           </h1>
 
           <p className={styles.description}>
@@ -62,7 +63,7 @@ export default function Home() {
                 <ul>
                   <li>Bis zu 150 km/h</li>
                   <li>4k Aufnahmen möglich</li>
-                  <li>Aufnahmen sind <a href="/faq" className={styles.atag}>stabilisiert</a></li>
+                  <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>stabilisiert</Link></li>
                   <li>Flugdauer ~ 6 min <br /> (es werden mehrere Batterien verwendet)</li>
                   <li>~ 800g</li>
                   <li>17cm * 17cm + Propeller</li>
@@ -78,7 +79,7 @@ export default function Home() {
                   <ul>
                     <li>Die Propeller sind geschützt deshalb besteht keine <br /> Verletzungsgefahr gefahr</li>
                     <li>4k Aufnahmen möglich</li>
-                    <li>Aufnahmen sind <a href="/faq" className={styles.atag}>stabilisiert</a></li>
+                    <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>stabilisiert</Link></li>
                     <li>Flugdauer ~ 7.5 min <br /> (es werden mehrere Batterien verwendet)</li>
                     <li>20cm * 20cm inkl. Propeller</li>
                   </ul>
@@ -100,7 +101,7 @@ export default function Home() {
                   <ul>
                     <li>Die Propeller sind geschützt deshalb besteht keine <br /> Verletzungsgefahr gefahr</li>
                     <li>4k Aufnahmen möglich</li>
-                    <li>Aufnahmen sind <a href="/faq" className={styles.atag}>stabilisiert</a></li>
+                    <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>stabilisiert</Link></li>
                     <li>Flugdauer ~ 7.5 min <br /> (es werden mehrere Batterien verwendet)</li>
                     <li>20cm * 20cm inkl. Propeller</li>
                   </ul>
