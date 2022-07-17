@@ -42,7 +42,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.section}>
           <h1 className={styles.title}>
-            Willkommen bei <a href="/">droneshots heidelberg</a>
+            Willkommen bei <Link href="/">droneshots heidelberg</Link>
           </h1>
 
           <p className={styles.description}>
@@ -70,8 +70,8 @@ export default function Home() {
                   <li>Bis zu 150 km/h</li>
                   <li>Gut für freiluft Umgebungen</li>
                   <li>4k Aufnahmen möglich</li>
-                  <li>Aufnahmen sind <a href="/faq" className={styles.atag}>stabilisiert</a></li>
-                  <li>Aufnahmen sind <a href="/faq" className={styles.atag}>color gegraded</a></li>
+                  <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>stabilisiert</Link></li>
+                  <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>color gegraded</Link></li>
                   <li>Flugdauer ~ 6 min <br /> (es werden mehrere Batterien verwendet)</li>
                   <li>~ 800g</li>
                   <li>17cm * 17cm + Propeller</li>
@@ -88,8 +88,8 @@ export default function Home() {
                     <li>Für nahe Aufnahmen zu Personen oder Gegenständen gedacht</li>
                     <li>Die Propeller sind geschützt deshalb besteht keine <br /> Verletzungsgefahr gefahr</li>
                     <li>4k Aufnahmen möglich</li>
-                    <li>Aufnahmen sind <a href="/faq" className={styles.atag}>stabilisiert</a></li>
-                    <li>Aufnahmen sind <a href="/faq" className={styles.atag}>color gegraded</a></li>
+                    <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>stabilisiert</Link></li>
+                    <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>color gegraded</Link></li>
                     <li>Flugdauer ~ 7.5 min <br /> (es werden mehrere Batterien verwendet)</li>
                     <li>20cm * 20cm inkl. Propeller</li>
                   </ul>
@@ -136,7 +136,7 @@ export default function Home() {
       </main >
 
       <footer className={styles.footer}>
-        {/* <a
+        {/* <Link
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
@@ -145,8 +145,8 @@ export default function Home() {
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
-        </a> */}
-        <a
+        </Link> */}
+        <Link
           href="https://chomeable.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
@@ -155,8 +155,8 @@ export default function Home() {
           {/* <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span> */}
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://chomeable.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
@@ -165,8 +165,8 @@ export default function Home() {
           {/* <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span> */}
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://chomeable.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
@@ -175,7 +175,7 @@ export default function Home() {
           {/* <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span> */}
-        </a>
+        </Link>
       </footer>
     </div >
   )
