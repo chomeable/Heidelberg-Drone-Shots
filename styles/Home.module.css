@@ -243,23 +243,6 @@
     display: block;
   }
 
-  .wave2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-
-  .wave2 svg {
-    position: relative;
-    display: block;
-    width: calc(104% + 1.3px);
-    height: 70px;
-    transform: rotateY(180deg);
-  }
-
   .wave {
     position: absolute;
     bottom: 0;
@@ -271,6 +254,23 @@
   }
 
   .wave svg {
+    position: relative;
+    display: block;
+    width: calc(104% + 1.3px);
+    height: 70px;
+    transform: rotateY(180deg);
+  }
+
+  .wave2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave2 svg {
     position: relative;
     display: block;
     width: calc(104% + 1.3px);

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useLayoutEffect, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
@@ -110,7 +111,7 @@ export default function Home() {
                   <ul>
                     <li>Die Propeller sind geschützt deshalb besteht keine <br /> Verletzungsgefahr gefahr</li>
                     <li>4k Aufnahmen möglich</li>
-                    <li>Aufnahmen sind <a href="/faq" className={styles.atag}>stabilisiert</a></li>
+                    <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>stabilisiert</Link></li>
                     <li>Flugdauer ~ 7.5 min <br /> (es werden mehrere Batterien verwendet)</li>
                     <li>20cm * 20cm inkl. Propeller</li>
                   </ul>
