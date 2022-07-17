@@ -14,20 +14,26 @@ export default function Home() {
           e.style = "transition: 1500ms; transform: scale(1);"
         })
       }
-      if (scrollTop < 440 || scrollTop > 1453) {
+
+      if (window.innerWidth >= 900) {
+        if (scrollTop < 440 || scrollTop > 1453) {
+          document.querySelectorAll('#row').forEach(e => {
+            e.style = "transition: 750ms; transform: scale(0);"
+          })
+        }
+      }
+      else if (scrollTop < 440 || scrollTop > 1896) {
         document.querySelectorAll('#row').forEach(e => {
           e.style = "transition: 750ms; transform: scale(0);"
         })
       }
-
-      console.log(scrollTop)
     }
   }, [])
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>STICKTIME</title>
+        <title>droneshots heidelberg</title>
         <meta name="description" content="Professionelle Drohnenaufnahmen" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -35,7 +41,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.section}>
           <h1 className={styles.title}>
-            Willkommen bei <a href="/">droneshot heidelberg</a>
+            Willkommen bei <a href="/">droneshots heidelberg</a>
           </h1>
 
           <p className={styles.description}>
@@ -61,8 +67,10 @@ export default function Home() {
                 <h4>Information zur Drohne in dieser Aufnamhe</h4>
                 <ul>
                   <li>Bis zu 150 km/h</li>
+                  <li>Gut für freiluft Umgebungen</li>
                   <li>4k Aufnahmen möglich</li>
                   <li>Aufnahmen sind <a href="/faq" className={styles.atag}>stabilisiert</a></li>
+                  <li>Aufnahmen sind <a href="/faq" className={styles.atag}>color gegraded</a></li>
                   <li>Flugdauer ~ 6 min <br /> (es werden mehrere Batterien verwendet)</li>
                   <li>~ 800g</li>
                   <li>17cm * 17cm + Propeller</li>
@@ -76,9 +84,11 @@ export default function Home() {
                   <h1>Drinnen Flug</h1>
                   <h4>Information zur Drohne in dieser Aufnamhe</h4>
                   <ul>
+                    <li>Für nahe Aufnahmen zu Personen oder Gegenständen gedacht</li>
                     <li>Die Propeller sind geschützt deshalb besteht keine <br /> Verletzungsgefahr gefahr</li>
                     <li>4k Aufnahmen möglich</li>
                     <li>Aufnahmen sind <a href="/faq" className={styles.atag}>stabilisiert</a></li>
+                    <li>Aufnahmen sind <a href="/faq" className={styles.atag}>color gegraded</a></li>
                     <li>Flugdauer ~ 7.5 min <br /> (es werden mehrere Batterien verwendet)</li>
                     <li>20cm * 20cm inkl. Propeller</li>
                   </ul>
@@ -116,7 +126,11 @@ export default function Home() {
               <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className={styles.shapefill}></path>
             </svg>
           </div>
-          TEST
+          <form action="https://formsubmit.co/0da830855b437249ecd6df8913af57a0" method="POST">
+            <input type="text" name="name" required />
+            <input type="email" name="email" required />
+            <button type="submit">Send</button>
+          </form>
         </div>
       </main >
 
