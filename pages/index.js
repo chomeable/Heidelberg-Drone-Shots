@@ -127,9 +127,24 @@ export default function Home() {
               <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className={styles.shapefill}></path>
             </svg>
           </div>
-          <form action="https://formsubmit.co/0da830855b437249ecd6df8913af57a0" method="POST">
-            <input type="text" name="name" required />
-            <input type="email" name="email" required />
+          <form action="https://formsubmit.co/0da830855b437249ecd6df8913af57a0" method="POST" className={styles.form}>
+            <div className={styles.formRow}>
+              <input type="text" name="name" required placeholder='Name' />
+            </div>
+            <div className={styles.formRow}>
+              <input type="email" name="email" required placeholder='Email' />
+            </div>
+            <div className={styles.formRow}>
+              <label>Typ</label>
+              <select required name="typ">
+                <option value="Privat">Privat</option>
+                <option value="Event">Event</option>
+                <option value="Öffentlich">Öffentlich</option>
+              </select>
+            </div>
+            <div className={styles.formColumn}>
+              <textarea name="message" required placeholder="Erzählen sie uns mehr über ihre Idee"></textarea>
+            </div>
             <button type="submit">Send</button>
           </form>
         </div>
