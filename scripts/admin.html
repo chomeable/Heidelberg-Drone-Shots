@@ -1,42 +1,93 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Admin Page</title>
 
-        <style>
-            body {
-                font-family: arial, sans-serif;
+<head>
+    <title>Admin Page</title>
 
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 0;
-                margin: 0;
-                position: relative;
-            }
-            table {
-                margin-top: 50px;
-                border-collapse: collapse;
-                width: 80%;
-            }
+    <style>
+        body {
+            font-family: arial, sans-serif;
 
-            td, th {
-                /* border: 1px solid #dddddd; */
-                border: 1px solid #aaa;
-                text-align: left;
-                padding: 8px;
-            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
 
-            tr:nth-child(even) {
-                background-color: #dddddd;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Admin Page</h1>
-        <table>
-            {{data}}
-        </table>
-    </body>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 80%;
+
+            margin-top: 20px;
+        }
+
+        td,
+        th {
+            /* border: 1px solid #dddddd; */
+            border: 1px solid #aaa;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .search-bar {
+            margin-top: 30px;
+        }
+
+        #search_input {}
+
+        #search_selector {}
+    </style>
+</head>
+
+<body>
+    <h1>Admin Page</h1>
+
+    <div class="search-bar"></div>
+
+    <table id="requests_table">
+
+    </table>
+
+    <script>
+        const data = `{{data}}`
+
+        let search = data.length > 0 ? `
+            <input id="search_input">
+            <select required id="search_selector">
+                ${Object.keys(data[0]).map(e => `<option value="${e}">${e}</option>`).join('')}
+            </select>
+        ` : ''
+        document.querySelector('.search-bar').innerHTML = search;
+
+        updateTable(data)
+
+        function updateTable(data) {
+            if (data.length == 0)
+                return document.getElementById('requests_table').innerHTML = '<th>No request found.</th>';
+
+            let ths = data.length > 0 ? `<tr>${Object.keys(data[0]).map(e => `<th>${e}</th>`).join('\n')}</tr>` : ''
+            let tds = data.map(e => `<tr>${Object.values(e).map(i => `<td>${i}</td>`).join('\n')}</tr>`).join('\n')
+
+            document.getElementById('requests_table').innerHTML = ths + tds;
+        }
+
+        document.querySelectorAll('.search-bar > *').forEach(e => e.oninput = () => {
+            let input = document.getElementById('search_input').value
+            let selector = document.getElementById('search_selector').value
+
+            let new_data = data.filter(e => e[selector] == null ? false : e[selector].toString().includes(input.toString()))
+
+            updateTable(new_data)
+        })
+    </script>
+</body>
+
 </html>
