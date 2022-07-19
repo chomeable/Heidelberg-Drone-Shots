@@ -129,22 +129,26 @@ export default function Home() {
           </div>
           {/* <form action="https://formsubmit.co/0da830855b437249ecd6df8913af57a0" method="POST" className={styles.form}> */}
           <form action="http://localhost:3000/api/form" method="POST" className={styles.form}>
+            <h1>Kontaktiere Uns</h1>
             <div className={styles.formRow}>
-              <input type="text" name="name" required placeholder='Name' />
+              <label>NAME *</label>
+              <input type="text" name="name" required placeholder='Geben sie ihren Namen ein' />
             </div>
             <div className={styles.formRow}>
-              <input type="email" name="email" required placeholder='Email' />
+              <label>EMAIL *</label>
+              <input type="email" name="email" required placeholder='Geben sie ihre Email ein' />
             </div>
             <div className={styles.formRow}>
-              <label>Typ</label>
+              <label>TYP DER AUFNAHME *</label>
               <select required name="typ">
                 <option value="Privat">Privat</option>
                 <option value="Event">Event</option>
                 <option value="Öffentlich">Öffentlich</option>
               </select>
             </div>
-            <div className={styles.formColumn}>
-              <textarea name="message" required placeholder="Erzählen sie uns mehr über ihre Idee"></textarea>
+            <div className={styles.formArea}>
+              <label>ERZÄHLEN SIE UNS MEHR ÜBER IHRE IDEE *</label>
+              <textarea name="message" required placeholder="Schreiben sie hier"></textarea>
             </div>
             <button type="submit">Send</button>
           </form>

@@ -12,16 +12,27 @@ export default function handler(req, res) {
       </form>
     `)
   } else if (req.method == 'POST' && req.body.password == 'testing') {
-    db.all('SELECT name, email, typ, message FROM assignments', (err, rows) => {
+    db.all('SELECT * FROM assignments', (err, rows) => {
       if (err) return res.status(500).json({ message: err.message })
+
+      console.log(JSON.stringify(rows))
 
       res.setHeader("Content-Type", "text/html")
 
-      let ths = rows.length > 0 ? `<tr>${ Object.keys(rows[0]).map(e => `<th>${e}</th>`).join('\n') }</tr>` : ''
-      let tds = rows.map(e => `<tr>${ Object.values(e).map(i => `<td>${i}</td>`).join('\n') }</tr>`).join('\n')
+      // let ths = rows.length > 0 ? `<tr>${Object.keys(rows[0]).map(e => `<th>${e}</th>`).join('\n')}</tr>` : ''
+      // let search = rows.length > 0 ? `
+      //   <div class="search-bar">
+      //     <input id="search_input">
+      //     <select required id="search_selector">
+      //       ${Object.keys(rows[0]).map(e => `<option value="${e}">${e}</option>`).join('')}
+      //     </select>
+      //   </div>
+      //     ` : ''
+      // let tds = rows.map(e => `<tr>${Object.values(e).map(i => `<td>${i}</td>`).join('\n')}</tr>`).join('\n')
 
-      res.send(fs.readFileSync('./scripts/admin.html').toString().replace('{{data}}', ths + tds))
-    
+      // res.send(fs.readFileSync('./scripts/admin.html').toString().replace('{{data}}', ths + search + tds))
+      res.send(fs.readFileSync('./scripts/admin.html').toString().replaceAll('`{{data}}`', JSON.stringify(rows)))
+
     })
 
   }
