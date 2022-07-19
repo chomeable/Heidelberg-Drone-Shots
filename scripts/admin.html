@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Page</title>
+
+        <style>
+            body {
+                font-family: arial, sans-serif;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                position: relative;
+            }
+            table {
+                margin-top: 50px;
+                border-collapse: collapse;
+                width: 80%;
+            }
+
+            td, th {
+                /* border: 1px solid #dddddd; */
+                border: 1px solid #aaa;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Admin Page</h1>
+        <table>
+            {{data}}
+        </table>
+    </body>
+</html>
