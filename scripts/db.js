@@ -14,7 +14,9 @@ const tables = `
     name TEXT NOT NULL,
     email TEXT NOT NULL,
     typ TEXT NOT NULL,
-    message TEXT NOT NULL
+    message TEXT NOT NULL,
+    done BOOLEAN DEFAULT FALSE,
+    timestamp TIMESTAMP
   )
 `
 
