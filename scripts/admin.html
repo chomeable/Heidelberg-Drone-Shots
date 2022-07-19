@@ -83,7 +83,7 @@
             let input = document.getElementById('search_input').value
             let selector = document.getElementById('search_selector').value
 
-            let new_data = data.filter(e => e[selector] == null ? false : e[selector].toString().includes(input.toString()))
+            let new_data = data.filter(e => `${e[selector]}`.includes(input.toString()))
 
             updateTable(new_data)
         })
