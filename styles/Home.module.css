@@ -235,6 +235,8 @@
   width: 100%;
   padding: 0.25rem;
   font-size: 15px;
+  border: 1.5px solid black;
+  border-radius: 5px;
 }
 
 .formRow select {
