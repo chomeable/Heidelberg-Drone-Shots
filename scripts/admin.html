@@ -94,7 +94,7 @@
                 document.querySelectorAll('#requests_table > tbody')[1].remove();
 
             if (new_data.length == 0) return document.getElementById('not_found').style.display = 'block'
-            
+
             document.getElementById('not_found').style.display = 'none'
 
             let tds = new_data.map(e => `<tr class="th-class">${Object.entries(e).map(i => `<td data-column="${i[0]}">${i[1]}</td>`).join('\n')}</tr>`).join('\n')
@@ -110,7 +110,7 @@
                 let columns = {}
                 document.querySelectorAll('.input[data-column]').forEach(e => columns[e.getAttribute('data-column')] = e.value)
 
-                let new_data = data.filter(e => !Object.entries(e).some(i => !`${i[1]}`.toLowerCase().includes(columns[i[0]].toLowerCase()) ))
+                let new_data = data.filter(e => !Object.entries(e).some(i => !`${i[1]}`.toLowerCase().includes(columns[i[0]].toLowerCase())))
 
                 updateTable(new_data)
                 addListener(columns, e.target.getAttribute('data-column'))
