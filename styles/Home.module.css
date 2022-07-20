@@ -388,9 +388,57 @@
   text-align: center;
 }
 
+@media screen and (max-width: 392px) {
+  .table {
+    font-size: 12px;
+  }
+
+  .tdtitle {
+    font-size: 13px;
+    font-weight: 700;
+    width: unset;
+  }
+
+  .tdinfo {
+    width: unset;
+    text-align: center;
+  }
+
+  .table tr td {
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .table {
+    font-size: 14px;
+  }
+
+  .tdtitle {
+    font-size: 15px;
+    font-weight: 700;
+    width: unset;
+  }
+
+  .tdinfo {
+    width: unset;
+    text-align: center;
+  }
+
+  .table tr td {
+    padding: 0.5rem;
+  }
+}
+
 @media screen and (max-width: 642px) {
   .footer {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 725px) {
+  .table {
+    width: 95%;
   }
 }
 

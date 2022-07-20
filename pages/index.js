@@ -1,34 +1,58 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useLayoutEffect, useEffect } from 'react'
+import { useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
 
+  // useLayoutEffect(() => {
+  //   window.onscroll = () => {
+  //     let scrollTop = document.documentElement.scrollTop;
+  //     if (scrollTop > 440) {
+  //       document.querySelectorAll('#row').forEach(e => {
+  //         e.style = "transition: 1500ms; transform: scale(1);"
+  //       })
+  //     }
 
-  useLayoutEffect(() => {
-    window.onscroll = () => {
-      let scrollTop = document.documentElement.scrollTop;
-      if (scrollTop > 440) {
-        document.querySelectorAll('#row').forEach(e => {
-          e.style = "transition: 1500ms; transform: scale(1);"
-        })
-      }
+  //     if (window.innerWidth >= 900) {
+  //       if (scrollTop < 440 || scrollTop > 1453) {
+  //         document.querySelectorAll('#row').forEach(e => {
+  //           e.style = "transition: 750ms; transform: scale(0);"
+  //         })
+  //       }
+  //     }
+  //     else if (scrollTop < 440 || scrollTop > 1896) {
+  //       document.querySelectorAll('#row').forEach(e => {
+  //         e.style = "transition: 750ms; transform: scale(0);"
+  //       })
+  //     }
+  //   }
+  // }, [])
+  useEffect(() => {
+    document.addEventListener('DOMContentLoaded', () => {
+      window.onscroll = () => {
+        let scrollTop = document.documentElement.scrollTop;
+        if (scrollTop > 440) {
+          document.querySelectorAll('#row').forEach(e => {
+            e.style = "transition: 1500ms; transform: scale(1);"
+          })
+        }
 
-      if (window.innerWidth >= 900) {
-        if (scrollTop < 440 || scrollTop > 1453) {
+        if (window.innerWidth >= 900) {
+          if (scrollTop < 440 || scrollTop > 1453) {
+            document.querySelectorAll('#row').forEach(e => {
+              e.style = "transition: 750ms; transform: scale(0);"
+            })
+          }
+        }
+        else if (scrollTop < 440 || scrollTop > 1896) {
           document.querySelectorAll('#row').forEach(e => {
             e.style = "transition: 750ms; transform: scale(0);"
           })
         }
       }
-      else if (scrollTop < 440 || scrollTop > 1896) {
-        document.querySelectorAll('#row').forEach(e => {
-          e.style = "transition: 750ms; transform: scale(0);"
-        })
-      }
-    }
+    })
   }, [])
 
   return (
@@ -163,38 +187,41 @@ export default function Home() {
           <h1 className={styles.showreel}>PREISE</h1>
           <h3>Wie wird der Preis zusammengesetzt?</h3>
           <table className={styles.table}>
-            <tr className={styles.tablehead}>
-              <th>BETREFF</th>
-              <th>PREIS</th>
-              <th>ERKLÄRUNG</th>
-            </tr>
+            <thead>
+              <tr className={styles.tablehead}>
+                <th>BETREFF</th>
+                <th>PREIS</th>
+                <th>ERKLÄRUNG</th>
+              </tr>
+            </thead>
 
-
-            <tr>
-              <td className={styles.tdtitle}>Pauschalbetrag</td>
-              <td>15€ bei Privatpersonen <br /> 40€ bei Unternehmen</td>
-              <td className={styles.tdinfo}>Eine Gebühr die bei jedem Auftrag verbindlich ist. Sozusagen der Mindestpreis</td>
-            </tr>
-            <tr>
-              <td className={styles.tdtitle}>Aufwand</td>
-              <td>12,50€ - 120,00€</td>
-              <td className={styles.tdinfo}>Der Aufwand beschreibt den Schwierigkeitsgrad der Aufnahme, je schwerer die Aufnahme desto mehr wird verrechnet.</td>
-            </tr>
-            <tr>
-              <td className={styles.tdtitle}>Gerätekosten</td>
-              <td>25€ - 35€</td>
-              <td className={styles.tdinfo}>Die kosten für die Aufrechterhaltung des Gerätes in diesem Fall der Drohne.</td>
-            </tr>
-            <tr>
-              <td className={styles.tdtitle}>Stundenlohn</td>
-              <td>35€</td>
-              <td className={styles.tdinfo}>Jede (Arbeitende)Stunde wird mit je 35€ abgerechnet. Dies beinhaltet Planung, Besprechung und die eigentliche Aufnahme.</td>
-            </tr>
-            <tr>
-              <td className={styles.tdtitle}>Stabilisation</td>
-              <td><strong>Kostenlos</strong></td>
-              <td className={styles.tdinfo}>Eine Stabilisierung der Aufnahme ist Inklusive und es muss nichts dazu gezahlt werden.</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td className={styles.tdtitle}>Pauschalbetrag</td>
+                <td>15€ bei Privatpersonen <br /> 40€ bei Unternehmen</td>
+                <td className={styles.tdinfo}>Eine Gebühr die bei jedem Auftrag verbindlich ist. Sozusagen der Mindestpreis</td>
+              </tr>
+              <tr>
+                <td className={styles.tdtitle}>Aufwand</td>
+                <td>12,50€ - 120,00€</td>
+                <td className={styles.tdinfo}>Der Aufwand beschreibt den Schwierigkeitsgrad der Aufnahme, je schwerer die Aufnahme desto mehr wird verrechnet.</td>
+              </tr>
+              <tr>
+                <td className={styles.tdtitle}>Gerätekosten</td>
+                <td>25€ - 35€</td>
+                <td className={styles.tdinfo}>Die kosten für die Aufrechterhaltung des Gerätes in diesem Fall der Drohne.</td>
+              </tr>
+              <tr>
+                <td className={styles.tdtitle}>Stundenlohn</td>
+                <td>35€</td>
+                <td className={styles.tdinfo}>Jede (Arbeitende)Stunde wird mit je 35€ abgerechnet. Dies beinhaltet Planung, Besprechung und die eigentliche Aufnahme.</td>
+              </tr>
+              <tr>
+                <td className={styles.tdtitle}>Stabilisation</td>
+                <td><strong>Kostenlos</strong></td>
+                <td className={styles.tdinfo}>Eine Stabilisierung der Aufnahme ist Inklusive und es muss nichts dazu gezahlt werden.</td>
+              </tr>
+            </tbody>
           </table>
         </div>
 
