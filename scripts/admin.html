@@ -31,6 +31,7 @@
             border: 1px solid #aaa;
             text-align: left;
             padding: 8px;
+            max-width: 400px;
         }
 
         tr:nth-child(even) {
@@ -39,6 +40,24 @@
 
         .search-bar {
             margin-top: 30px;
+        }
+
+        .input {
+            padding: 0;
+            margin-right: 40px;
+            width: 100%;
+            /* width: fit-content; */
+            /* width: 50px; */
+        }
+
+        th-input {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        td[data-column="message"] {
+            color: linear-gradient(white 100%, transparent);
         }
 
         #search_input {}
@@ -65,25 +84,29 @@
                 ${Object.keys(data[0]).map(e => `<option value="${e}">${e}</option>`).join('')}
             </select>
         ` : ''
-        document.querySelector('.search-bar').innerHTML = search;
+        // document.querySelector('.search-bar').innerHTML = search;
 
         updateTable(data)
 
-        function updateTable(data) {
+        function updateTable(new_data) {
             if (data.length == 0)
                 return document.getElementById('requests_table').innerHTML = '<th>No request found.</th>';
 
             let ths = data.length > 0 ? `<tr>${Object.keys(data[0]).map(e => `<th>${e}</th>`).join('\n')}</tr>` : ''
-            let tds = data.map(e => `<tr>${Object.values(e).map(i => `<td>${i}</td>`).join('\n')}</tr>`).join('\n')
+            let inputs = data.length > 0 ? `<tr>${Object.keys(data[0]).map(e => `<th class="th-input"><input class="input" /></th>`).join('\n')}</tr>` : ''
+            let tds = new_data.map(e => `<tr>${Object.entries(e).map(i => `<td data-column="${i[0]}">${i[1]}</td>`).join('\n')}</tr>`).join('\n')
 
-            document.getElementById('requests_table').innerHTML = ths + tds;
+            document.getElementById('requests_table').innerHTML = ths + inputs + tds;
         }
 
-        document.querySelectorAll('.search-bar > *').forEach(e => e.oninput = () => {
-            let input = document.getElementById('search_input').value
-            let selector = document.getElementById('search_selector').value
+        // document.querySelectorAll('.search-bar > *').forEach(e => e.oninput = () => {
+        document.querySelectorAll('.input').forEach(e => e.oninput = () => {
+            let columns = {}
+            document.querySelectorAll('.input[data-column]').forEach(e => { columns[e.getAttribute('data-column')] = e.value })
 
-            let new_data = data.filter(e => `${e[selector]}`.includes(input.toString()))
+            console.log(columns)
+            // let new_data = data.filter(e => `${e[selector]}`.includes(input.toString()))
+            let new_data = data.filter(e => !Object.entries(i => i.some(i => !i[1].includes(columns[i[0]]))))
 
             updateTable(new_data)
         })

@@ -167,7 +167,7 @@ export default function Home() {
           </span>
         </Link> */}
         <Link
-          href="https://chomeable.vercel.app"
+          href="https://www.instagram.com/droneshots_heidelberg/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -187,7 +187,7 @@ export default function Home() {
           </span> */}
         </Link>
         <Link
-          href="https://chomeable.vercel.app"
+          href="https://www.youtube.com/channel/UC1TyGYAExdPEKKM8z6fSnNw"
           target="_blank"
           rel="noopener noreferrer"
         >
