@@ -1,59 +1,59 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
 
-  // useLayoutEffect(() => {
-  //   window.onscroll = () => {
-  //     let scrollTop = document.documentElement.scrollTop;
-  //     if (scrollTop > 440) {
-  //       document.querySelectorAll('#row').forEach(e => {
-  //         e.style = "transition: 1500ms; transform: scale(1);"
-  //       })
-  //     }
+  useLayoutEffect(() => {
+    window.onscroll = () => {
+      let scrollTop = document.documentElement.scrollTop;
+      if (scrollTop > 440) {
+        document.querySelectorAll('#row').forEach(e => {
+          e.style = "transition: 1500ms; transform: scale(1);"
+        })
+      }
 
-  //     if (window.innerWidth >= 900) {
-  //       if (scrollTop < 440 || scrollTop > 1453) {
-  //         document.querySelectorAll('#row').forEach(e => {
-  //           e.style = "transition: 750ms; transform: scale(0);"
-  //         })
-  //       }
-  //     }
-  //     else if (scrollTop < 440 || scrollTop > 1896) {
-  //       document.querySelectorAll('#row').forEach(e => {
-  //         e.style = "transition: 750ms; transform: scale(0);"
-  //       })
-  //     }
-  //   }
-  // }, [])
-  useEffect(() => {
-    document.addEventListener('DOMContentLoaded', () => {
-      window.onscroll = () => {
-        let scrollTop = document.documentElement.scrollTop;
-        if (scrollTop > 440) {
-          document.querySelectorAll('#row').forEach(e => {
-            e.style = "transition: 1500ms; transform: scale(1);"
-          })
-        }
-
-        if (window.innerWidth >= 900) {
-          if (scrollTop < 440 || scrollTop > 1453) {
-            document.querySelectorAll('#row').forEach(e => {
-              e.style = "transition: 750ms; transform: scale(0);"
-            })
-          }
-        }
-        else if (scrollTop < 440 || scrollTop > 1896) {
+      if (window.innerWidth >= 900) {
+        if (scrollTop < 440 || scrollTop > 1453) {
           document.querySelectorAll('#row').forEach(e => {
             e.style = "transition: 750ms; transform: scale(0);"
           })
         }
       }
-    })
+      else if (scrollTop < 440 || scrollTop > 1896) {
+        document.querySelectorAll('#row').forEach(e => {
+          e.style = "transition: 750ms; transform: scale(0);"
+        })
+      }
+    }
   }, [])
+  // useEffect(() => {
+  //   document.addEventListener('DOMContentLoaded', () => {
+  //     window.onscroll = () => {
+  //       let scrollTop = document.documentElement.scrollTop;
+  //       if (scrollTop > 440) {
+  //         document.querySelectorAll('#row').forEach(e => {
+  //           e.style = "transition: 1500ms; transform: scale(1);"
+  //         })
+  //       }
+
+  //       if (window.innerWidth >= 900) {
+  //         if (scrollTop < 440 || scrollTop > 1453) {
+  //           document.querySelectorAll('#row').forEach(e => {
+  //             e.style = "transition: 750ms; transform: scale(0);"
+  //           })
+  //         }
+  //       }
+  //       else if (scrollTop < 440 || scrollTop > 1896) {
+  //         document.querySelectorAll('#row').forEach(e => {
+  //           e.style = "transition: 750ms; transform: scale(0);"
+  //         })
+  //       }
+  //     }
+  //   })
+  // }, [])
 
   return (
     <div className={styles.container}>
