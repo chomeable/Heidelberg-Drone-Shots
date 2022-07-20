@@ -71,45 +71,51 @@
 
     <div class="search-bar"></div>
 
-    <table id="requests_table">
+    <table id="requests_table"></table>
 
-    </table>
+    <h2 id="not_found">No request found.</h2>
 
     <script>
         const data = `{{data}}`
 
-        let search = data.length > 0 ? `
-            <input id="search_input">
-            <select required id="search_selector">
-                ${Object.keys(data[0]).map(e => `<option value="${e}">${e}</option>`).join('')}
-            </select>
-        ` : ''
-        // document.querySelector('.search-bar').innerHTML = search;
-
+        setupTable()
         updateTable(data)
+        addListener()
 
-        function updateTable(new_data) {
-            if (data.length == 0)
-                return document.getElementById('requests_table').innerHTML = '<th>No request found.</th>';
+        function setupTable() {
+            if (data.length == 0) return
 
             let ths = data.length > 0 ? `<tr>${Object.keys(data[0]).map(e => `<th>${e}</th>`).join('\n')}</tr>` : ''
-            let inputs = data.length > 0 ? `<tr>${Object.keys(data[0]).map(e => `<th class="th-input"><input class="input" /></th>`).join('\n')}</tr>` : ''
-            let tds = new_data.map(e => `<tr>${Object.entries(e).map(i => `<td data-column="${i[0]}">${i[1]}</td>`).join('\n')}</tr>`).join('\n')
+            let inputs = data.length > 0 ? `<tr>${Object.keys(data[0]).map(e => `<th class="th-input"><input class="input" data-column="${e}" /></th>`).join('\n')}</tr>` : ''
+            document.getElementById('requests_table').innerHTML = ths + inputs;
+        }
+        function updateTable(new_data) {
+            if (document.querySelectorAll('#requests_table > tbody')[1])
+                document.querySelectorAll('#requests_table > tbody')[1].remove();
 
-            document.getElementById('requests_table').innerHTML = ths + inputs + tds;
+            if (new_data.length == 0) return document.getElementById('not_found').style.display = 'block'
+            
+            document.getElementById('not_found').style.display = 'none'
+
+            let tds = new_data.map(e => `<tr class="th-class">${Object.entries(e).map(i => `<td data-column="${i[0]}">${i[1]}</td>`).join('\n')}</tr>`).join('\n')
+
+            document.getElementById('requests_table').innerHTML += `<tbody>${tds}</tbody>`;
         }
 
-        // document.querySelectorAll('.search-bar > *').forEach(e => e.oninput = () => {
-        document.querySelectorAll('.input').forEach(e => e.oninput = () => {
-            let columns = {}
-            document.querySelectorAll('.input[data-column]').forEach(e => { columns[e.getAttribute('data-column')] = e.value })
+        function addListener(search_values, focus) {
+            if (search_values && focus)
+                document.querySelectorAll('.input').forEach(e => { e.value = search_values[e.getAttribute('data-column')]; e.getAttribute('data-column') == focus && e.focus() })
 
-            console.log(columns)
-            // let new_data = data.filter(e => `${e[selector]}`.includes(input.toString()))
-            let new_data = data.filter(e => !Object.entries(i => i.some(i => !i[1].includes(columns[i[0]]))))
+            document.querySelectorAll('.input').forEach(e => e.oninput = e => {
+                let columns = {}
+                document.querySelectorAll('.input[data-column]').forEach(e => columns[e.getAttribute('data-column')] = e.value)
 
-            updateTable(new_data)
-        })
+                let new_data = data.filter(e => !Object.entries(e).some(i => !`${i[1]}`.toLowerCase().includes(columns[i[0]].toLowerCase()) ))
+
+                updateTable(new_data)
+                addListener(columns, e.target.getAttribute('data-column'))
+            })
+        }
     </script>
 </body>
 
