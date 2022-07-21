@@ -1,5 +1,6 @@
 const fs = require('fs')
 import { db, setup_tables } from '../../scripts/db'
+import path from 'path'
 
 setup_tables()
 
@@ -18,7 +19,7 @@ export default function handler(req, res) {
       res.setHeader("Content-Type", "text/html")
 
       // res.send(fs.readFileSync('./scripts/admin.html').toString().replace('{{data}}', ths + search + tds))
-      res.send(fs.readFileSync('./scripts/admin.html').toString().replaceAll('`{{data}}`', JSON.stringify(rows)))
+      res.send(fs.readFileSync(path.join(process.cwd(), 'scripts', 'admin.html')).toString().replaceAll('`{{data}}`', JSON.stringify(rows)))
 
     })
 
