@@ -198,7 +198,7 @@ export default function Home() {
             </svg>
           </div>
           {/* <form action="https://formsubmit.co/0da830855b437249ecd6df8913af57a0" method="POST" className={styles.form}> */}
-          <form action="http://localhost:3000/api/form" method="POST" className={styles.form}>
+          <form action="/api/form" method="POST" className={styles.form}>
             <h1>Kontaktiere Uns</h1>
             <div className={styles.formRow}>
               <label>NAME *</label>
