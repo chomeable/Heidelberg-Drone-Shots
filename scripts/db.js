@@ -1,5 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 import path from 'path';
+import fs from 'fs';
 
 const db = new sqlite3.Database(path.join(process.cwd(), 'db', 'database.db'), sqlite3.OPEN_READWRITE, (err) => {
   if (err)
@@ -35,4 +36,25 @@ function setup_tables() {
   });
 }
 
-export { db, setup_tables }
+class Data {
+  get() {
+    return JSON.parse(fs.readFileSync(path.join(process.cwd(), 'db', 'database.json')).toString())
+  }
+  set(value) {
+    let data = this.get()
+    data.assignments.push(Object.assign({
+      id: data.assignments.length,
+      requested_at: 'TODO',
+      processed: false,
+      finished: false,
+      finished_at: null,
+      price: null
+    }, value))
+
+    fs.writeFileSync(path.join(process.cwd(), 'db', 'database.json'), JSON.stringify(data))
+  }
+}
+
+let data = new Data();
+
+export { db, setup_tables, data }
