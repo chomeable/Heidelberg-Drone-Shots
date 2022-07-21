@@ -81,8 +81,14 @@ export default function Home() {
   const recalculate = e => {
     let price = startPrice;
 
-    if (e)
-      attributes[e.target.name] = e.target.value
+    if (e) {
+      if (e.target.name == 'aufwand' && e.target.value > 10)
+        attributes[e.target.name] = 10
+      else if (e.target.name == 'aufwand' && e.target.value < 1)
+        attributes[e.target.name] = 1
+      else
+        attributes[e.target.name] = e.target.value
+    }
 
     price += attributes.pauschal == 'privat' ? 50 : 75;
     price += aufwande[attributes.aufwand - 1]
@@ -275,8 +281,8 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.calculatorRow}>
-                <label htmlFor="aufwand">Aufwand: </label>
-                <input type="number" name="aufwand" max={10} min={1} placeholder="Aufwand" id="aufwand" onInput={recalculate} defaultValue={1} />
+                <label htmlFor="aufwand">Aufwand (1-10): </label>
+                <input type="number" name="aufwand" max={10} min={1} id="aufwand" onInput={recalculate} defaultValue={1} />
               </div>
 
               <div className={styles.calculatorRow}>
