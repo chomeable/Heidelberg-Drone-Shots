@@ -4,6 +4,22 @@ import Link from 'next/link'
 import { useEffect, useLayoutEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
+
+const rabatt = 30;
+const aufwande = [
+  12.50,
+  15,
+  20,
+  27.50,
+  37.50,
+  50,
+  65,
+  82.50,
+  100,
+  119.99
+]
+const startPrice = 30;
+
 export default function Home() {
 
   useLayoutEffect(() => {
@@ -28,6 +44,8 @@ export default function Home() {
         })
       }
     }
+
+    recalculate()
   }, [])
   // useEffect(() => {
   //   document.addEventListener('DOMContentLoaded', () => {
@@ -54,6 +72,27 @@ export default function Home() {
   //     }
   //   })
   // }, [])
+
+  let attributes = {
+    pauschal: 'privat',
+    aufwand: 1
+  }
+
+  const recalculate = e => {
+    let price = startPrice;
+
+    if (e)
+      attributes[e.target.name] = e.target.value
+
+    price += attributes.pauschal == 'privat' ? 50 : 75;
+    price += aufwande[attributes.aufwand - 1]
+
+    document.getElementById('calculatorResult').innerHTML = price + '€'
+    if (rabatt > 0) {
+      let rabattPrice = Math.round(price * (100 - rabatt)) / 100;
+      document.getElementById('calculatorResult').innerHTML = `${price}€ <h7 style="font-size: 15px">-${rabatt}%</h7> = ${rabattPrice}€`
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -94,8 +133,8 @@ export default function Home() {
                   <li>Bis zu 150 km/h</li>
                   <li>Gut für freiluft Umgebungen</li>
                   <li>4k Aufnahmen möglich</li>
-                  <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>stabilisiert</Link></li>
-                  <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>color gegraded</Link></li>
+                  <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>stabilisiert</p></Link></li>
+                  <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>color gegraded</p></Link></li>
                   <li>Flugdauer ~ 6 min <br /> (es werden mehrere Batterien verwendet)</li>
                   <li>~ 800g</li>
                   <li>17cm * 17cm + Propeller</li>
@@ -112,8 +151,8 @@ export default function Home() {
                     <li>Für nahe Aufnahmen zu Personen oder Gegenständen gedacht</li>
                     <li>Die Propeller sind geschützt deshalb besteht keine <br /> Verletzungsgefahr gefahr</li>
                     <li>4k Aufnahmen möglich</li>
-                    <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>stabilisiert</Link></li>
-                    <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>color gegraded</Link></li>
+                    <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>stabilisiert</p></Link></li>
+                    <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>color gegraded</p></Link></li>
                     <li>Flugdauer ~ 7.5 min <br /> (es werden mehrere Batterien verwendet)</li>
                     <li>20cm * 20cm inkl. Propeller</li>
                   </ul>
@@ -135,7 +174,8 @@ export default function Home() {
                   <ul>
                     <li>Die Propeller sind geschützt deshalb besteht keine <br /> Verletzungsgefahr gefahr</li>
                     <li>4k Aufnahmen möglich</li>
-                    <li>Aufnahmen sind <Link href="/faq" className={styles.atag}>stabilisiert</Link></li>
+                    <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>stabilisiert</p></Link></li>
+                    <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>color gegraded</p></Link></li>
                     <li>Flugdauer ~ 7.5 min <br /> (es werden mehrere Batterien verwendet)</li>
                     <li>20cm * 20cm inkl. Propeller</li>
                   </ul>
@@ -198,31 +238,55 @@ export default function Home() {
             <tbody>
               <tr>
                 <td className={styles.tdtitle}>Pauschalbetrag</td>
-                <td>15€ bei Privatpersonen <br /> 40€ bei Unternehmen</td>
-                <td className={styles.tdinfo}>Eine Gebühr die bei jedem Auftrag verbindlich ist. Sozusagen der Mindestpreis</td>
+                <td>50€ bei Privatpersonen <br /> 75€ bei Unternehmen</td>
+                <td className={styles.tdinfo}>Eine Gebühr, die bei <u>jedem</u> Auftrag verbindlich ist.</td>
               </tr>
               <tr>
                 <td className={styles.tdtitle}>Aufwand</td>
                 <td>12,50€ - 120,00€</td>
-                <td className={styles.tdinfo}>Der Aufwand beschreibt den Schwierigkeitsgrad der Aufnahme, je schwerer die Aufnahme desto mehr wird verrechnet.</td>
+                <td className={styles.tdinfo}>Abhängig vom <u>Schwierigkeitsgrad</u> und <u>Zeitaufwand</u> der Aufnahme.</td>
               </tr>
               <tr>
                 <td className={styles.tdtitle}>Gerätekosten</td>
-                <td>25€ - 35€</td>
-                <td className={styles.tdinfo}>Die kosten für die Aufrechterhaltung des Gerätes in diesem Fall der Drohne.</td>
+                <td>30€</td>
+                <td className={styles.tdinfo}>Die Kosten für die <u>Wartung</u> des Gerätes in diesem Fall der Drohne.</td>
               </tr>
               <tr>
-                <td className={styles.tdtitle}>Stundenlohn</td>
-                <td>35€</td>
-                <td className={styles.tdinfo}>Jede (Arbeitende)Stunde wird mit je 35€ abgerechnet. Dies beinhaltet Planung, Besprechung und die eigentliche Aufnahme.</td>
-              </tr>
-              <tr>
-                <td className={styles.tdtitle}>Stabilisation</td>
-                <td><strong>Kostenlos</strong></td>
-                <td className={styles.tdinfo}>Eine Stabilisierung der Aufnahme ist Inklusive und es muss nichts dazu gezahlt werden.</td>
+                <td className={styles.tdtitle}>Stabilisation + Farbkorrektur</td>
+                <td><s>20€</s>    <strong>Kostenlos</strong></td>
+                <td className={styles.tdinfo}>Eine Stabilisierung und Farbkorrektur der Aufnahme ist <u>inklusive</u>.</td>
               </tr>
             </tbody>
           </table>
+
+
+          <div>
+            <div className={styles.calculator}>
+              <h3 style={{ fontSize: '25px', padding: '0' }}>Rechner</h3>
+              <div className={styles.radiobtns}>
+                <div>
+                  <input type="radio" name="pauschal" defaultChecked value="privat" id="privatperson" onInput={recalculate} />
+                  <label htmlFor="privatperson">Privatpersonen</label>
+                </div>
+                {/* &lt;&gt; */}
+                <div>
+                  <input type="radio" name="pauschal" value="unternehmen" id="unternehmer" onInput={recalculate} />
+                  <label htmlFor="unternehmer">Unternehmen</label>
+                </div>
+              </div>
+              <div className={styles.calculatorRow}>
+                <label for="aufwand">Aufwand: </label>
+                <input type="number" name="aufwand" max={10} min={1} placeholder="Aufwand" id="aufwand" onInput={recalculate} defaultValue={1} />
+              </div>
+
+              <div className={styles.calculatorRow}>
+                <div className={styles.inputs}>
+                  <h2 id="calculatorResult">0€</h2>
+                </div>
+                <p className={styles.warn}>* Dies sind nur <strong>geschätzte</strong> Summen zur Orientierung.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className={styles.sec4}>

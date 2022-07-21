@@ -242,6 +242,15 @@
 
 .atag {
   color: #0070f3;
+  padding: 0;
+  margin: 0;
+  margin-left: 5px;
+
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
 }
 
 .big {
@@ -387,6 +396,96 @@
 .tdinfo {
   width: 45%;
   text-align: center;
+}
+
+.calculator {
+  width: fit-content;
+  height: fit-content;
+  padding: 17.5px;
+  border-radius: 7.5px;
+  background-color: #fd4d4dd0;
+  box-shadow: 0 0 26px #fd4d4d75;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.calculator input[type="radio"] {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.calculator label {
+  margin: 5px;
+  padding: 4px;
+}
+
+.calculator label[for="privatperson"] {
+  margin-right: 5px;
+  margin-left: -4px;
+}
+
+.calculator label[for="unternehmer"] {
+  margin-right: -4px;
+}
+
+.calculator input[type="radio"]:checked+label {
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.22);
+  border-radius: 4px;
+  color: black;
+  font-weight: 700;
+}
+
+.calculatorRow input[type="number"] {
+  margin-top: 10px;
+  font-size: 18px;
+  border: none;
+  padding: 5px;
+  border-radius: 7.5px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.33);
+}
+
+.calculatorRow label[for="aufwand"] {
+  font-weight: 700;
+  font-size: 20px;
+  align-self: center;
+}
+
+.inputs {
+  /* border: 1px solid black; */
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 15px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.44);
+}
+
+.warn {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.calculator h2 {
+  font-weight: 700;
+  text-align: center;
+}
+
+.radiobtns {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: black;
+  color: white;
+  padding: 9px;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 392px) {
