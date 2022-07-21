@@ -275,7 +275,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.calculatorRow}>
-                <label for="aufwand">Aufwand: </label>
+                <label htmlFor="aufwand">Aufwand: </label>
                 <input type="number" name="aufwand" max={10} min={1} placeholder="Aufwand" id="aufwand" onInput={recalculate} defaultValue={1} />
               </div>
 
