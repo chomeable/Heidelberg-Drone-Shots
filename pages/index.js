@@ -315,6 +315,16 @@ export default function Home() {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </Link> */}
+        {/* <Link
+          href="https://chomeable.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>Powered by <strong>chomeable</strong></p>
+          <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span>
+        </Link> */}
         <Link
           href="https://www.instagram.com/droneshots_heidelberg/"
           target="_blank"
@@ -326,11 +336,11 @@ export default function Home() {
           </span> */}
         </Link>
         <Link
-          href="https://chomeable.vercel.app"
+          href="/impressum"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <p>Powered by <strong>chomeable</strong></p>
+          Impressum
           {/* <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span> */}
