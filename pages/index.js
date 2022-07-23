@@ -127,6 +127,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.section}>
+          <img src='/drone-icon.ico' />
+
+          <br />
+
           <h1 className={styles.title}>
             Willkommen bei <Link href="/">droneshots heidelberg</Link>
           </h1>
