@@ -95,8 +95,18 @@ export default function Home() {
     document.getElementById('calculatorResult').innerHTML = price + '€'
     if (rabatt > 0) {
       let rabattPrice = Math.round(price * (100 - rabatt)) / 100;
-      document.getElementById('calculatorResult').innerHTML = `${price}€ <h7 style="font-size: 15px">-${rabatt}%</h7> = ${rabattPrice}€`
+      // document.getElementById('calculatorResult').innerHTML = `${price}€ <h7 style="font-size: 15px">-${rabatt}%</h7> = ${rabattPrice}€`
+      document.getElementById('calculatorResult').innerHTML = `${rabattPrice}€ (inkl. -30%)`
     }
+  }
+
+  const closeBanner = () => {
+    document.getElementById('banner').style.transition = '500ms'
+    document.getElementById('banner').style.opacity = '0'
+
+    setTimeout(() => {
+      document.getElementById('banner').style.display = 'none'
+    }, 700)
   }
 
   return (
@@ -106,6 +116,13 @@ export default function Home() {
         <meta name="description" content="Professionelle Drohnenaufnahmen" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <div className={styles.banner} id="banner">
+        <div>
+          <button onClick={() => closeBanner()}>&#x2716;</button>
+        </div>
+        <h2>30% Off</h2>
+      </div>
 
       <main className={styles.main}>
         <div className={styles.section}>
@@ -135,9 +152,10 @@ export default function Home() {
           <h1 className={styles.showreel}>VORSCHAU</h1>
           <div className={styles.grid}>
             <div className={styles.row} id="row">
-              <video className={styles.vid} controls controlsList="nodownload" autoPlay muted>
-                <source src="/videos/vid1.mp4" type="video/mp4" />
-              </video>
+              {/* <video className={styles.vid} controls controlsList="nodownload" autoPlay muted>
+                <source src="https://youtu.be/90oX0VLorfk" />
+              </video> */}
+              <iframe className={styles.vid} src="https://www.youtube.com/embed/90oX0VLorfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div>
                 <h1>Draußen Flug</h1>
                 <h4>Information zur Drohne in dieser Aufnamhe</h4>
@@ -347,6 +365,16 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Impressum
+          {/* <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span> */}
+        </Link>
+        <Link
+          href="/agb"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          AGB
           {/* <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span> */}
