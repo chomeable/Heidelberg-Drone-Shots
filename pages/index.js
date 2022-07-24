@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useEffect, useLayoutEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
-
 const rabatt = 30;
 const aufwande = [
   12.50,
@@ -127,8 +126,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.section}>
-          <img src='/drone-icon.ico' />
 
+          {/* <div className='menu_bar'>
+            <img src='/drone-icon.ico' height='70px' /> 
+          </div> */}
+          <img src='/drone-icon.ico' />
           <br />
 
           <h1 className={styles.title}>

@@ -1,3 +1,14 @@
 .agb {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agb div {
+    max-width: 750px;
+}
+
+.link {
+    color: #0070f3;
+    font-weight: 700;
 }
