@@ -9,7 +9,7 @@ export default function agb() {
                 <h1>Die Allgemeine Geschäftsbedingungen</h1>
 
                 <h2>Geltungsbereich</h2>
-                <p>Die Allgemeine Geschäftsbedingungen (nachstehend "AGB") gelten für alle Verträge zwischen <br />droneshots-heidelberg(nachstehend "DH") und dem Kunden ("Sie", "sich", ").</p>
+                <p>Die Allgemeine Geschäftsbedingungen (nachstehend &quot;AGB&quot;) gelten für alle Verträge zwischen <br />droneshots-heidelberg(nachstehend &quot;DH&quot;) und dem Kunden (&quot;Sie&quot;, &quot;sich&quot;, &quot;).</p>
                 <p>Die AGB gelten für alle Verträge zwischen droneshots-heidelberg und dem Kunden.</p>
 
                 <h2>§1 Übergabe des fertigen Produktes</h2>
@@ -26,7 +26,7 @@ export default function agb() {
                 </ul>
 
                 {/* <h2>§3 Schadenersatz und rücksichtloses Verhalten</h2>
-                <p>Außer bei unangemessener Fahrlässigkeit oder vorsätzlichen Fehlverhalten von droneshots-heidelberg Mitarbeitern(nachstehend "DHM") stimmen sie auch zu, für sich selbst und im Namen aller mit dem Kunden verbunden Personen, bzw. aller Anwesenden.</p> */}
+                <p>Außer bei unangemessener Fahrlässigkeit oder vorsätzlichen Fehlverhalten von droneshots-heidelberg Mitarbeitern(nachstehend &quot;DHM&quot;) stimmen sie auch zu, für sich selbst und im Namen aller mit dem Kunden verbunden Personen, bzw. aller Anwesenden.</p> */}
 
                 <h2>§3 Serviceanfragen</h2>
                 <p>Stellen sie bitte die folgend aufgelistete Dinge sicher:</p>
