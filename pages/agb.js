@@ -9,9 +9,9 @@ export default function agb() {
                 <h1>Die Allgemeine Geschäftsbedingungen</h1>
 
                 <h2>Geltungsbereich</h2>
-                <p>Die Allgemeine Geschäftsbedingungen (nachstehend „AGB") gelten für alle Verträge zwischen <br />droneshots-heidelberg(nachstehend „DH") und dem Kunden („Sie", „sich", ").</p>
+                <p>Die Allgemeine Geschäftsbedingungen (nachstehend "AGB") gelten für alle Verträge zwischen <br />droneshots-heidelberg(nachstehend "DH") und dem Kunden ("Sie", "sich", ").</p>
                 <p>Die AGB gelten für alle Verträge zwischen droneshots-heidelberg und dem Kunden.</p>
-                
+
                 <h2>§1 Übergabe des fertigen Produktes</h2>
                 <p>Die fertige Ware(siehe Liste §2) wird dem Kunden von DH zum angeben Zeitpunkt(siehe §2) mängelfrei übergeben.</p>
                 <p>Darunter ist zu verstehen, dass der Kunde zum vereinbarten Zeitpunkt die Ware annimmt und den vereinbarten Kaufpreis(siehe §11) DH zahlt.</p>
@@ -26,8 +26,8 @@ export default function agb() {
                 </ul>
 
                 {/* <h2>§3 Schadenersatz und rücksichtloses Verhalten</h2>
-                <p>Außer bei unangemessener Fahrlässigkeit oder vorsätzlichen Fehlverhalten von droneshots-heidelberg Mitarbeitern(nachstehend „DHM") stimmen sie auch zu, für sich selbst und im Namen aller mit dem Kunden verbunden Personen, bzw. aller Anwesenden.</p> */}
-            
+                <p>Außer bei unangemessener Fahrlässigkeit oder vorsätzlichen Fehlverhalten von droneshots-heidelberg Mitarbeitern(nachstehend "DHM") stimmen sie auch zu, für sich selbst und im Namen aller mit dem Kunden verbunden Personen, bzw. aller Anwesenden.</p> */}
+
                 <h2>§3 Serviceanfragen</h2>
                 <p>Stellen sie bitte die folgend aufgelistete Dinge sicher:</p>
                 <ul className={styles.ul}>
@@ -58,19 +58,19 @@ export default function agb() {
                     <li><p>Starke Winde (&gt;Windstufe 4)</p></li>
                 </ul>
 
-                
+
                 <h2>§8 Eigentum des Produktes</h2>
                 <p>Das fertige Produkt bekommt der Kunde ohne zusätzliche Kosten zur freien Verfügung.</p>
                 <p>Im Vertrag, wird vereinbart, ob der Kunde der alleinige Besitzer bleibt oder ob er DH zum Miteigentümer ernennt und somit einen Preisnachlass für den nächsten Auftrag erhält (die höhe dessen wird ebenfalls im Vertrag behandelt).</p>
-            
+
                 <h2>§9 Datenschutz</h2>
                 <p>Mit der ernennung von DH zum Miteigentümer gewähren sie DH gemäß Artikel 17 volles Recht auf das Produkt.</p>
 
                 <h2>§10 Salvotorische Klausel</h2>
                 <p>
-                    Sollten sich eine oder mehrere der in diesen Allgemeinen Geschäftsbedingungen enthaltenen Bestimmungen 
-                    in irgendeiner Weise als ungültig, rechtswidrig oder nicht durchsetzbar erweisen, bleiben die Gültigkeit, 
-                    Rechtmäßigkeit und Durchsetzbarkeit der übrigen Bestimmungen davon unberührt. Diese Bestimmungen werden in 
+                    Sollten sich eine oder mehrere der in diesen Allgemeinen Geschäftsbedingungen enthaltenen Bestimmungen
+                    in irgendeiner Weise als ungültig, rechtswidrig oder nicht durchsetzbar erweisen, bleiben die Gültigkeit,
+                    Rechtmäßigkeit und Durchsetzbarkeit der übrigen Bestimmungen davon unberührt. Diese Bestimmungen werden in
                     dem Umfang überarbeitet. Dies ist erforderlich, um sie durchsetzbar zu machen.
                 </p>
 

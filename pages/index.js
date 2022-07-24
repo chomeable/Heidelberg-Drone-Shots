@@ -155,7 +155,7 @@ export default function Home() {
               {/* <video className={styles.vid} controls controlsList="nodownload" autoPlay muted>
                 <source src="https://youtu.be/90oX0VLorfk" />
               </video> */}
-              <iframe className={styles.vid} src="https://www.youtube.com/embed/90oX0VLorfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe className={styles.vid} src="https://www.youtube.com/embed/90oX0VLorfk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <div>
                 <h1>Draußen Flug</h1>
                 <h4>Information zur Drohne in dieser Aufnamhe</h4>
