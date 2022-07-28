@@ -97,7 +97,9 @@
 
             document.getElementById('not_found').style.display = 'none'
 
-            let tds = new_data.map(e => `<tr class="th-class">${Object.entries(e).map(i => `<td data-column="${i[0]}">${i[1]}</td>`).join('\n')}</tr>`).join('\n')
+            new_data.map(e => Object.entries(e).map(i => console.log(i)))
+            new_data.map(e => console.log(e))
+            let tds = new_data.map(e => `<tr class="th-class">${Object.entries(e).map(i => i[0] === 'rechnungsnummer' ? `<td data-column="${i[0]}"><a href="http://localhost:8080/${i[1]}.pdf">${i[1]}</a></td>` : `<td data-column="${i[0]}">${i[1]}</td>`).join('\n')}</tr>`).join('\n')
 
             document.getElementById('requests_table').innerHTML += `<tbody>${tds}</tbody>`;
         }

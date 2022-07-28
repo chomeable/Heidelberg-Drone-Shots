@@ -245,7 +245,7 @@ export default function Home() {
               <textarea name="message" required placeholder="Schreiben sie hier"></textarea>
             </div>
             <button type="submit">Send</button>
-            <p className={styles.flex}>Mit dem senden diese Formulares stimmen sie den <Link href="/agb"><p className={styles.atag}>AGB</p></Link> zu</p>
+            <p>Mit dem senden diese Formulares stimmen sie den <Link href="/agb"><a className={styles.atag}>AGB</a></Link> zu</p>
           </form>
           <div className={styles.wave}>
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
