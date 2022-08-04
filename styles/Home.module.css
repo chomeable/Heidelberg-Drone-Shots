@@ -10,6 +10,12 @@
   color: #0070f3;
 }
 
+.prices {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .banner {
   position: fixed;
   bottom: 0;
@@ -654,5 +660,13 @@
     width: calc(104% + 1.3px);
     height: 70px;
     transform: rotateY(180deg);
+  }
+}
+
+@media screen and (max-width: 1064px) {
+  .prices {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

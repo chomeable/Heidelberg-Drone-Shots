@@ -256,7 +256,9 @@ export default function Home() {
 
         <div className={styles.sec3}>
           <h1 className={styles.showreel}>PREISE</h1>
-          <h3>Wie wird der Preis zusammengesetzt?</h3>
+          <br />
+          <br />
+          <div className={styles.prices}>
           <table className={styles.table}>
             <thead>
               <tr className={styles.tablehead}>
@@ -318,6 +320,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
         </div>
 
         <div className={styles.sec4}>
