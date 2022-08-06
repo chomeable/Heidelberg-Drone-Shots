@@ -139,7 +139,7 @@ export default function Home() {
           </h1>
 
           <p className={styles.description}>
-            Professionelle Drohnenaufnahmen <br /> für Einzelpersonen und Unternehmen
+            Professionelle Drohnenaufnahmen <br /> für Privatperson und <br /> Unternehmen
           </p>
 
           <div className={styles.wave}>
@@ -182,23 +182,22 @@ export default function Home() {
               <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className={styles.shapefill}></path>
             </svg>
           </div>
-          {/* <form action="https://formsubmit.co/0da830855b437249ecd6df8913af57a0" method="POST" className={styles.form}> */}
-          <form action="/api/form" method="POST" className={styles.form}>
-            <h1>Kontaktiere Uns</h1>
+          <form action="https://formsubmit.co/0da830855b437249ecd6df8913af57a0" method="POST" className={styles.form}>
+          {/* <form action="/api/form" method="POST" className={styles.form}> */}
+            <h1>KONTAKT</h1>
             <div className={styles.formRow}>
               <label>NAME *</label>
-              <input type="text" name="name" required placeholder='Geben sie ihren Namen ein' />
+              <input type="text" name="name" required placeholder='Geben sie ihren Namen an' />
             </div>
             <div className={styles.formRow}>
               <label>EMAIL *</label>
-              <input type="email" name="email" required placeholder='Geben sie ihre Email ein' />
+              <input type="email" name="email" required placeholder='Geben sie ihre Email an' />
             </div>
             <div className={styles.formRow}>
-              <label>TYP DER AUFNAHME *</label>
               <select required name="typ">
-                <option value="Privat">Privat</option>
-                <option value="Event">Event</option>
-                <option value="Öffentlich">Öffentlich</option>
+                <option value="Privatperson">Privatperson</option>
+                <option value="Unternehmen">Unternehmen</option>
+                <option value="Andere">Andere</option>
               </select>
             </div>
             <div className={styles.formArea}>
