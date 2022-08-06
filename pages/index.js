@@ -174,6 +174,17 @@ export default function Home() {
               <h2 className={styles.projektTitle}>KREATIV</h2>
             </div>
           </div>
+
+          <ul>
+                  <li>Bis zu 150 km/h</li>
+                  <li>Gut für freiluft Umgebungen</li>
+                  <li>4k Aufnahmen möglich</li>
+                  <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>stabilisiert</p></Link></li>
+                  <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>color gegraded</p></Link></li>
+                  <li>Flugdauer ~ 6 min <br /> (es werden mehrere Batterien verwendet)</li>
+                  <li>~ 800g</li>
+                  <li>17cm * 17cm + Propeller</li>
+                </ul>
         </div>
 
         <div className={styles.sec2}>
@@ -324,6 +335,16 @@ export default function Home() {
           </span> */}
         </Link>
         <Link
+          href="https://www.youtube.com/channel/UC1TyGYAExdPEKKM8z6fSnNw"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Youtube Page
+          {/* <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span> */}
+        </Link>
+        <Link
           href="/impressum"
           target="_blank"
           rel="noopener noreferrer"
@@ -343,16 +364,7 @@ export default function Home() {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span> */}
         </Link>
-        <Link
-          href="https://www.youtube.com/channel/UC1TyGYAExdPEKKM8z6fSnNw"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Youtube Page
-          {/* <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span> */}
-        </Link>
+        
       </footer>
     </div >
   )
