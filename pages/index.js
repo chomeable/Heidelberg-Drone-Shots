@@ -117,12 +117,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.banner} id="banner">
+      {/* <div className={styles.banner} id="banner">
         <div>
           <button onClick={() => closeBanner()}>&#x2716;</button>
         </div>
         <h2>30% Off</h2>
-      </div>
+      </div> */}
 
       <main className={styles.main}>
         <div className={styles.section}>
@@ -131,15 +131,15 @@ export default function Home() {
             <img src='/drone-icon.ico' height='70px' /> 
           </div> */}
           {/* <img src='/drone-icon.ico' /> */}
-          <img src="/DH-Logo.svg" height="175px" width="175px"/>
+          <embed src="/DH-Logo.svg" height="175" width="175"/>
           <br />
 
           <h1 className={styles.title}>
-            Willkommen bei <Link href="/">droneshots heidelberg</Link>
+            {/* <Link href="/">droneshots heidelberg</Link> */}Droneshots Heidelberg
           </h1>
 
           <p className={styles.description}>
-            Professionelle Drohnenaufnahmen in freien oder geschlossenen Umgebungen
+            Professionelle Drohnenaufnahmen für Einzelpersonen und Unternehmen
           </p>
 
           <div className={styles.wave}>
