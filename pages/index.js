@@ -92,11 +92,11 @@ export default function Home() {
     price += attributes.pauschal == 'privat' ? 50 : 75;
     price += aufwande[attributes.aufwand - 1]
 
-    document.getElementById('calculatorResult').innerHTML = price + '€'
+    document.getElementById('calculatorResult').innerHTML = price + '€*'
     if (rabatt > 0) {
       let rabattPrice = Math.round(price * (100 - rabatt)) / 100;
       // document.getElementById('calculatorResult').innerHTML = `${price}€ <h7 style="font-size: 15px">-${rabatt}%</h7> = ${rabattPrice}€`
-      document.getElementById('calculatorResult').innerHTML = `${rabattPrice}€ (inkl. -30%)`
+      document.getElementById('calculatorResult').innerHTML = `${rabattPrice}€* (inkl. -${rabatt}%)`
     }
   }
 
@@ -130,7 +130,8 @@ export default function Home() {
           {/* <div className='menu_bar'>
             <img src='/drone-icon.ico' height='70px' /> 
           </div> */}
-          <img src='/drone-icon.ico' />
+          {/* <img src='/drone-icon.ico' /> */}
+          <img src="/DH-Logo.svg" height="175px" width="175px"/>
           <br />
 
           <h1 className={styles.title}>
