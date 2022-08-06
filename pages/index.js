@@ -139,7 +139,7 @@ export default function Home() {
           </h1>
 
           <p className={styles.description}>
-            Professionelle Drohnenaufnahmen für Einzelpersonen und Unternehmen
+            Professionelle Drohnenaufnahmen <br /> für Einzelpersonen und Unternehmen
           </p>
 
           <div className={styles.wave}>
@@ -150,68 +150,28 @@ export default function Home() {
         </div>
 
         <div className={styles.sec1}>
-          <h1 className={styles.showreel}>VORSCHAU</h1>
+          <h1 className={styles.showreel}>PROJEKTE</h1>
           <div className={styles.grid}>
             <div className={styles.row} id="row">
               {/* <video className={styles.vid} controls controlsList="nodownload" autoPlay muted>
                 <source src="https://youtu.be/90oX0VLorfk" />
               </video> */}
               <iframe className={styles.vid} src="https://www.youtube.com/embed/90oX0VLorfk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-              <div>
-                <h1>Draußen Flug</h1>
-                <h4>Information zur Drohne in dieser Aufnamhe</h4>
-                <ul>
-                  <li>Bis zu 150 km/h</li>
-                  <li>Gut für freiluft Umgebungen</li>
-                  <li>4k Aufnahmen möglich</li>
-                  <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>stabilisiert</p></Link></li>
-                  <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>color gegraded</p></Link></li>
-                  <li>Flugdauer ~ 6 min <br /> (es werden mehrere Batterien verwendet)</li>
-                  <li>~ 800g</li>
-                  <li>17cm * 17cm + Propeller</li>
-                </ul>
-              </div>
+              <h2 className={styles.projektTitle}>VERFOLGUNG</h2>
             </div>
 
-            <div className={styles.big}>
-              <div className={styles.row} id="row">
-                <div>
-                  <h1>Drinnen Flug</h1>
-                  <h4>Information zur Drohne in dieser Aufnamhe</h4>
-                  <ul>
-                    <li>Für nahe Aufnahmen zu Personen oder Gegenständen gedacht</li>
-                    <li>Die Propeller sind geschützt deshalb besteht keine <br /> Verletzungsgefahr gefahr</li>
-                    <li>4k Aufnahmen möglich</li>
-                    <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>stabilisiert</p></Link></li>
-                    <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>color gegraded</p></Link></li>
-                    <li>Flugdauer ~ 7.5 min <br /> (es werden mehrere Batterien verwendet)</li>
-                    <li>20cm * 20cm inkl. Propeller</li>
-                  </ul>
-                </div>
-                <video className={styles.vid} controls controlsList="nodownload">
-                  <source src="/videos/vid1.mp4" type="video/mp4" />
-                </video>
-              </div>
+            <div className={styles.row} id="row">
+              <video className={styles.vid} controls controlsList="nodownload">
+                <source src="/videos/vid1.mp4" type="video/mp4" />
+              </video>
+              <h2 className={styles.projektTitle}>FREESTYLE</h2>
             </div>
 
-            <div className={styles.small}>
-              <div className={styles.row} id="row">
-                <video className={styles.vid} controls controlsList="nodownload">
-                  <source src="/videos/vid1.mp4" type="video/mp4" />
-                </video>
-                <div>
-                  <h1>Drinnen Flug</h1>
-                  <h4>Information zur Drohne in dieser Aufnamhe</h4>
-                  <ul>
-                    <li>Die Propeller sind geschützt deshalb besteht keine <br /> Verletzungsgefahr gefahr</li>
-                    <li>4k Aufnahmen möglich</li>
-                    <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>stabilisiert</p></Link></li>
-                    <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>color gegraded</p></Link></li>
-                    <li>Flugdauer ~ 7.5 min <br /> (es werden mehrere Batterien verwendet)</li>
-                    <li>20cm * 20cm inkl. Propeller</li>
-                  </ul>
-                </div>
-              </div>
+            <div className={styles.row} id="row">
+              <video className={styles.vid} controls controlsList="nodownload">
+                <source src="/videos/vid1.mp4" type="video/mp4" />
+              </video>
+              <h2 className={styles.projektTitle}>KREATIV</h2>
             </div>
           </div>
         </div>

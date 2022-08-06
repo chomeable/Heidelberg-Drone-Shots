@@ -124,6 +124,13 @@
   margin-left: 0.5rem;
 }
 
+.projektTitle {
+  text-align: left;
+  width: 90%;
+  margin: 0;
+  padding: 0;
+}
+
 .section {
   height: 100vh;
   width: 100%;
@@ -320,10 +327,6 @@
 
 .big {
   display: block;
-}
-
-.small {
-  display: none;
 }
 
 .form {
@@ -617,14 +620,6 @@
 
   .vid {
     width: 90vw;
-  }
-
-  .big {
-    display: none;
-  }
-
-  .small {
-    display: block;
   }
 
   .wave {
