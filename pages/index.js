@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect, useLayoutEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
-const rabatt = 30;
+const rabatt = 0;
 const aufwande = [
   12.50,
   15,
@@ -24,6 +24,7 @@ export default function Home() {
   useLayoutEffect(() => {
     window.onscroll = () => {
       let scrollTop = document.documentElement.scrollTop;
+      console.log(scrollTop)
       if (scrollTop > 440) {
         document.querySelectorAll('#row').forEach(e => {
           e.style = "transition: 1500ms; transform: scale(1);"
@@ -31,13 +32,13 @@ export default function Home() {
       }
 
       if (window.innerWidth >= 900) {
-        if (scrollTop < 440 || scrollTop > 1453) {
+        if (scrollTop < 440 || scrollTop > 3200) {
           document.querySelectorAll('#row').forEach(e => {
             e.style = "transition: 750ms; transform: scale(0);"
           })
         }
       }
-      else if (scrollTop < 440 || scrollTop > 1896) {
+      else if (scrollTop < 440 || scrollTop > 4000) {
         document.querySelectorAll('#row').forEach(e => {
           e.style = "transition: 750ms; transform: scale(0);"
         })
@@ -74,7 +75,8 @@ export default function Home() {
 
   let attributes = {
     pauschal: 'privat',
-    aufwand: 1
+    aufwand: 1,
+    schnitt: true,
   }
 
   const recalculate = e => {
@@ -85,12 +87,15 @@ export default function Home() {
         attributes[e.target.name] = 10
       else if (e.target.name == 'aufwand' && e.target.value < 1)
         attributes[e.target.name] = 1
+      else if (e.target.name == 'schnitt')
+        attributes[e.target.name] = e.target.checked
       else
         attributes[e.target.name] = e.target.value
     }
 
     price += attributes.pauschal == 'privat' ? 50 : 75;
     price += aufwande[attributes.aufwand - 1]
+    price += attributes.schnitt == true ? 25 : 0;
 
     document.getElementById('calculatorResult').innerHTML = price + '€*'
     if (rabatt > 0) {
@@ -175,16 +180,22 @@ export default function Home() {
             </div>
           </div>
 
-          <ul>
-                  <li>Bis zu 150 km/h</li>
-                  <li>Gut für freiluft Umgebungen</li>
-                  <li>4k Aufnahmen möglich</li>
-                  <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>stabilisiert</p></Link></li>
-                  <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>color gegraded</p></Link></li>
-                  <li>Flugdauer ~ 6 min <br /> (es werden mehrere Batterien verwendet)</li>
-                  <li>~ 800g</li>
-                  <li>17cm * 17cm + Propeller</li>
-                </ul>
+          <div>       
+            <h2 style={{color: "white"}}>Infos zu diesen Aufnahmen</h2>
+            <ul style={{color: "white"}}>
+              <li>Bis zu 150 km/h</li>
+              <li>Gut für freiluft Umgebungen</li>
+              <li>Aufgenommen mit einer GoPro Hero 9</li>
+              <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>stabilisiert</p></Link></li>
+              <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>color gegraded</p></Link></li>
+              <li className={styles.flex}>4k 60fps Aufnahmen möglich</li>
+              <br />
+              <li>Flugdauer ~ 6 min <br /> (es werden mehrere Batterien verwendet)</li>
+              <li>~ 800g</li>
+              <li>Reichweite &gt;1km </li>
+              <li>17cm * 17cm + Propeller</li>
+            </ul>
+          </div>
         </div>
 
         <div className={styles.sec2}>
@@ -256,6 +267,11 @@ export default function Home() {
                 <td className={styles.tdinfo}>Die Kosten für die <u>Wartung</u> des Gerätes in diesem Fall der Drohne.</td>
               </tr>
               <tr>
+                <td className={styles.tdtitle}>Videoschnitt</td>
+                <td>25€</td>
+                <td className={styles.tdinfo}>Professioneller Schnitt des Videos nach Wünschen des Kunden.</td>
+              </tr>
+              <tr>
                 <td className={styles.tdtitle}>Stabilisation + Farbkorrektur</td>
                 <td><s>20€</s>    <strong>Kostenlos</strong></td>
                 <td className={styles.tdinfo}>Eine Stabilisierung und Farbkorrektur der Aufnahme ist <u>inklusive</u>.</td>
@@ -279,8 +295,12 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.calculatorRow}>
-                <label htmlFor="aufwand">Aufwand (1-10): </label>
+                <label htmlFor="aufwand">Aufwand: </label>
                 <input type="number" name="aufwand" max={10} min={1} id="aufwand" onInput={recalculate} defaultValue={1} />
+              </div>
+              <div className={styles.calculatorRow} name="schnitt">
+                <label htmlFor="aufwand">Schnitt </label>
+                <input type="checkbox" name="schnitt" id="schnitt" onInput={recalculate} defaultChecked={true} />
               </div>
 
               <div className={styles.calculatorRow}>
