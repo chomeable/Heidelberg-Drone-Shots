@@ -16,6 +16,13 @@
   justify-content: space-evenly;
 }
 
+.coming {
+  text-align: center;
+  width: 100vw;
+  color: white;
+  margin-top: 0;
+}
+
 .banner {
   position: fixed;
   bottom: 0;
@@ -132,7 +139,7 @@
 
 .projektTitle {
   text-align: left;
-  width: 90%;
+  width: 80%;
   margin: 0;
   padding: 0;
 }
@@ -284,7 +291,7 @@
 
 .vid {
   aspect-ratio: 16/9;
-  width: 90vw;
+  width: 80vw;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.33);
   border: none;
@@ -321,11 +328,18 @@
   color: #0070f3;
   padding: 0;
   margin: 0;
-  margin-left: 5px;
-  margin-right: 5px;
+  /* margin-left: px; */
+  /* margin-right: px; */
 
   font-weight: 700;
   cursor: pointer;
+}
+
+.nonthicc {
+  font-weight: lighter;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
 }
 
 .flex {
@@ -419,6 +433,8 @@
   border: none;
   /* background-color: rgb(247, 247, 247); */
   resize: none;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 .formArea {
@@ -467,6 +483,7 @@
   font-size: 17px;
   font-weight: 700;
   width: 25.4%;
+  text-align: center;
 }
 
 .tdinfo {
@@ -518,6 +535,10 @@
   font-weight: 700;
 }
 
+.calculatorRow input {
+  width: 4vw;
+}
+
 .calculatorRow[name="schnitt"] {
   display: flex;
   align-items: center;
@@ -530,6 +551,7 @@
   padding: 5px;
   border-radius: 7.5px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.33);
+  width: 17%;
 }
 
 .calculatorRow input[type="checkbox"] {
@@ -542,6 +564,10 @@
   font-size: 20px;
   align-self: center;
   min-width: 60px;
+}
+
+.calculatorRow {
+  width: 80%;
 }
 
 .inputs {
@@ -628,6 +654,7 @@
     font-size: 13px;
     font-weight: 700;
     width: unset;
+    text-align: center;
   }
 
   .tdinfo {
@@ -649,6 +676,7 @@
     font-size: 15px;
     font-weight: 700;
     width: unset;
+    text-align: center;
   }
 
   .tdinfo {
@@ -694,6 +722,10 @@
 
   .vid {
     width: 90vw;
+  }
+
+  .projektTitle {
+    width: 90%;
   }
 
   .wave {

@@ -9,7 +9,7 @@ export default function agb() {
                 <h1>Die Allgemeine Geschäftsbedingungen</h1>
 
                 <h2>Geltungsbereich</h2>
-                <p>Die Allgemeine Geschäftsbedingungen (nachstehend &quot;AGB&quot;) gelten für alle Verträge zwischen <br />droneshots-heidelberg(nachstehend &quot;DH&quot;) und dem Kunden (&quot;Sie&quot;, &quot;sich&quot;, &quot;).</p>
+                <p>Die Allgemeine Geschäftsbedingungen (nachstehend &quot;AGB&quot;) gelten für alle Verträge zwischen <br />droneshots-heidelberg(nachstehend &quot;DH&quot;) und dem Kunden (nachstehend &quot;Sie&quot;, &quot;sich&quot;, etc.).</p>
                 <p>Die AGB gelten für alle Verträge zwischen droneshots-heidelberg und dem Kunden.</p>
 
                 <h2>§1 Übergabe des fertigen Produktes</h2>
@@ -23,6 +23,7 @@ export default function agb() {
                     <li>Stabilisierung der Aufnahme</li>
                     <li>Farbkorrektur der Aufnahme</li>
                     <li>Rendern der Aufnahme in der gewünschten Auflösung</li>
+                    <li>(Wenn beantragt) Schnitt des Videos</li>
                 </ul>
 
                 {/* <h2>§3 Schadenersatz und rücksichtloses Verhalten</h2>
@@ -32,8 +33,8 @@ export default function agb() {
                 <p>Stellen sie bitte die folgend aufgelistete Dinge sicher:</p>
                 <ul className={styles.ul}>
                     <li><p>An dem geplanten Ort ist das Fliegen und Aufnehmen mit einer Drohne erlaubt <br />(schauen sie ggf. auf <Link href="https://app.airmap.com" style="color: #0070f3"><a className={styles.link}>Airmap</a></Link> nach)</p></li>
-                    <li><p>Die Drehort am geplanten Zeitpunkt zugänglich ist.</p></li>
-                    <li><p>Die Drehort sicher und ungefährlich ist.</p></li>
+                    <li><p>Der Drehort am geplanten Zeitpunkt zugänglich ist.</p></li>
+                    <li><p>Der Drehort sicher und ungefährlich ist.</p></li>
                 </ul>
 
                 <h2>§4 Absagen & Verschiebungen</h2>
@@ -57,6 +58,7 @@ export default function agb() {
                     <li><p>Hitze(&gt;40°C), da dies zu gefährdung der anwesenden Personen führen kann.</p></li>
                     <li><p>Starke Winde (&gt;Windstufe 4)</p></li>
                 </ul>
+                <p>Wenn eines oder mehrere dieser Ereignisse auftreten sollte wird der Dreh ohne verrechnung verschoben.</p>
 
 
                 <h2>§8 Eigentum des Produktes</h2>

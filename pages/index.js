@@ -32,13 +32,13 @@ export default function Home() {
       }
 
       if (window.innerWidth >= 900) {
-        if (scrollTop < 440 || scrollTop > 3200) {
+        if (scrollTop < 440) {
           document.querySelectorAll('#row').forEach(e => {
             e.style = "transition: 750ms; transform: scale(0);"
           })
         }
       }
-      else if (scrollTop < 440 || scrollTop > 4000) {
+      else if (scrollTop < 440) {
         document.querySelectorAll('#row').forEach(e => {
           e.style = "transition: 750ms; transform: scale(0);"
         })
@@ -83,11 +83,11 @@ export default function Home() {
   const drones = [
     {
       img: "https://geprc.com/wp-content/uploads/2022/06/16-2.jpg",
-      text: "Eine Propellergeschützte Drohne optimal für Indoor flüge und ermöglicht es nahe an Personen zu fliegen."
+      text: "Eine Propellergeschützte Drohne, optimal für Indoor-Flüge. <br /> Ermöglicht es nahe an Personen/Objekten zu fliegen. <br />Beschleunigung bis zu 100km/h. <br /> 1200 Umdrehungen pro Minute. <br /> Flugzeit 7-9 Minuten pro Batterie."
     },
     {
       img: "https://ae01.alicdn.com/kf/H4a6bc7c42aa34aa88db0a84438139074i/IFlight-Nazgul5-V2-240mm-5-zoll-4S-6S-FPV-Drone-BNF-mit-SucceX-E-F4-45A.jpg_Q90.jpg_.webp",
-      text: "Eine schnelle und wendige Drohne gut zu nutzen für Verfolgungsshots oder Freestyle."
+      text: "Eine schnelle und wendige Drohne, optimal für Verfolgungsshots oder Freestyle. <br /> Ermöglicht es atemberaubende Momente festzuhalten. <br />Beschleunigung bis zu 150km/h. <br /> 750 Umdrehungen pro Minute. <br /> Flugzeit 5-7 Minuten pro Batterie."
     }
   ]
 
@@ -137,7 +137,7 @@ export default function Home() {
 
     price += attributes.pauschal == 'privat' ? 50 : 75;
     price += aufwande[attributes.aufwand - 1]
-    price += attributes.schnitt == true ? 25 : 0;
+    price += attributes.schnitt == true ? 20 : 0;
 
     document.getElementById('calculatorResult').innerHTML = price + '€*'
     if (rabatt > 0) {
@@ -186,7 +186,7 @@ export default function Home() {
           </h1>
 
           <p className={styles.description}>
-            Professionelle Drohnenaufnahmen <br /> für Privatperson und <br /> Unternehmen
+            Professionelle Drohnenaufnahmen <br /> für Privatpersonen und <br /> Unternehmen
           </p>
 
           <div className={styles.wave}>
@@ -198,11 +198,10 @@ export default function Home() {
 
         <div className={styles.sec1}>
           <h1 className={styles.showreel}>PROJEKTE</h1>
+          <h3 className={styles.coming}>COMING SOON</h3>
+          <br />
           <div className={styles.grid}>
-            <div className={styles.row} id="row">
-              {/* <video className={styles.vid} controls controlsList="nodownload" autoPlay muted>
-                <source src="https://youtu.be/90oX0VLorfk" />
-              </video> */}
+            {/* <div className={styles.row} id="row">
               <iframe className={styles.vid} src="https://www.youtube.com/embed/90oX0VLorfk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <h2 className={styles.projektTitle}>VERFOLGUNG</h2>
             </div>
@@ -219,24 +218,7 @@ export default function Home() {
                 <source src="/videos/vid1.mp4" type="video/mp4" />
               </video>
               <h2 className={styles.projektTitle}>KREATIV</h2>
-            </div>
-          </div>
-
-          <div>
-            <h2 style={{ color: "white" }}>Infos zu diesen Aufnahmen</h2>
-            <ul style={{ color: "white" }}>
-              <li>Bis zu 150 km/h</li>
-              <li>Gut für freiluft Umgebungen</li>
-              <li>Aufgenommen mit einer GoPro Hero 9</li>
-              <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>stabilisiert</p></Link></li>
-              <li className={styles.flex}>Aufnahmen sind <Link href="/faq"><p className={styles.atag}>color gegraded</p></Link></li>
-              <li className={styles.flex}>4k 60fps Aufnahmen möglich</li>
-              <br />
-              <li>Flugdauer ~ 6 min <br /> (es werden mehrere Batterien verwendet)</li>
-              <li>~ 800g</li>
-              <li>Reichweite &gt;1km </li>
-              <li>17cm * 17cm + Propeller</li>
-            </ul>
+            </div> */}
           </div>
         </div>
 
@@ -258,6 +240,10 @@ export default function Home() {
               <input type="email" name="email" required placeholder='Geben sie ihre Email an' />
             </div>
             <div className={styles.formRow}>
+              <label>TELEFON *</label>
+              <input type="tel" name="phone" pattern="+49[7-9]{2}-[0-9]{3}-[0-9]{4}" required placeholder='Geben sie ihre Nummer an' />
+            </div>
+            <div className={styles.formRow}>
               <select required name="typ">
                 <option value="Privatperson">Privatperson</option>
                 <option value="Unternehmen">Unternehmen</option>
@@ -265,11 +251,11 @@ export default function Home() {
               </select>
             </div>
             <div className={styles.formArea}>
-              <label>ERZÄHLEN SIE UNS MEHR ÜBER IHRE IDEE *</label>
+              <label>ERZÄHLEN SIE UNS ÜBER IHRE IDEE *</label>
               <textarea name="message" required placeholder="Schreiben sie hier"></textarea>
             </div>
             <button type="submit">Send</button>
-            <p>Mit dem senden diese Formulares stimmen sie den <Link href="/agb"><a className={styles.atag}>AGB</a></Link> zu</p>
+            <p>Mit dem versenden dieses Formulares stimmen sie den <Link href="/agb"><a className={styles.atag}>AGB</a></Link> zu</p>
           </form>
           <div className={styles.wave}>
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -286,37 +272,37 @@ export default function Home() {
             <table className={styles.table}>
               <thead>
                 <tr className={styles.tablehead}>
-                  <th>BETREFF</th>
+                  <th>AUFTRAG</th>
                   <th>PREIS</th>
-                  <th>ERKLÄRUNG</th>
+                  <th>INFO</th>
                 </tr>
               </thead>
 
               <tbody>
                 <tr>
                   <td className={styles.tdtitle}>Pauschalbetrag</td>
-                  <td>50€ bei Privatpersonen <br /> 75€ bei Unternehmen</td>
-                  <td className={styles.tdinfo}>Eine Gebühr, die bei <u>jedem</u> Auftrag verbindlich ist.</td>
+                  <td>50€ Privatpersonen <br /> 75€ Unternehmen</td>
+                  <td className={styles.tdinfo}>Gebühr, verbindlich bei <u>jedem</u> Projekt.</td>
                 </tr>
                 <tr>
                   <td className={styles.tdtitle}>Aufwand</td>
                   <td>12,50€ - 120,00€</td>
-                  <td className={styles.tdinfo}>Abhängig vom <u>Schwierigkeitsgrad</u> und <u>Zeitaufwand</u> der Aufnahme.</td>
+                  <td className={styles.tdinfo}>Abhängig von der <u>Schwierigkeit</u> und der <u>Drehzeit</u> des Projektes (1-10).</td>
                 </tr>
                 <tr>
                   <td className={styles.tdtitle}>Gerätekosten</td>
                   <td>30€</td>
-                  <td className={styles.tdinfo}>Die Kosten für die <u>Wartung</u> des Gerätes in diesem Fall der Drohne.</td>
+                  <td className={styles.tdinfo}>Die Kosten für die <u>Wartung</u> des <a href="#equipment" className={styles.atag}>Equipments</a>.</td>
                 </tr>
                 <tr>
-                  <td className={styles.tdtitle}>Videoschnitt</td>
-                  <td>25€</td>
-                  <td className={styles.tdinfo}>Professioneller Schnitt des Videos nach Wünschen des Kunden.</td>
+                  <td className={styles.tdtitle}>Videobearbeitung <br /> <p className={styles.nonthicc}>optional</p></td>
+                  <td>20€</td>
+                  <td className={styles.tdinfo}>Professioneller Videoschnitt nach Wünschen des Kunden.</td>
                 </tr>
                 <tr>
-                  <td className={styles.tdtitle}>Stabilisation + Farbkorrektur</td>
-                  <td><s>20€</s>    <strong>Kostenlos</strong></td>
-                  <td className={styles.tdinfo}>Eine Stabilisierung und Farbkorrektur der Aufnahme ist <u>inklusive</u>.</td>
+                  <td className={styles.tdtitle}>Stabilisation Farbkorrektur <br /> <p className={styles.nonthicc}>optional</p></td>
+                  <td><s>20€</s>    <strong>KOSTENLOS</strong></td>
+                  <td className={styles.tdinfo}>Stabilisierung und Farbkorrektur der Aufnahme.</td>
                 </tr>
               </tbody>
             </table>
@@ -337,12 +323,20 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={styles.calculatorRow}>
-                  <label htmlFor="aufwand">Aufwand: </label>
+                  <label htmlFor="aufwand">Aufwand </label>
                   <input type="number" name="aufwand" max={10} min={1} id="aufwand" onInput={recalculate} defaultValue={1} />
                 </div>
                 <div className={styles.calculatorRow} name="schnitt">
-                  <label htmlFor="aufwand">Schnitt </label>
                   <input type="checkbox" name="schnitt" id="schnitt" onInput={recalculate} defaultChecked={true} />
+                  <label htmlFor="aufwand">Schnitt </label>
+                </div>
+                <div className={styles.calculatorRow} name="schnitt">
+                  <input type="checkbox" />
+                  <label htmlFor="aufwand">Stabilisation </label>
+                </div>
+                <div className={styles.calculatorRow} name="schnitt">
+                  <input type="checkbox" />
+                  <label htmlFor="aufwand">Farbkorrektur </label>
                 </div>
 
                 <div className={styles.calculatorRow}>
@@ -365,8 +359,10 @@ export default function Home() {
         </div>
 
         <div className={styles.sec5}>
-          <h1 className={styles.title}>EQUIPMENT</h1>
+          <h1 className={styles.title} id="equipment">EQUIPMENT</h1>
 
+          <br />
+          <br />
           <br />
 
           <div className={styles.equipments}>
@@ -388,6 +384,8 @@ export default function Home() {
               <p id="sliderText">
               </p>
             </div>
+
+            <br />
 
             <div className={styles.equipment}>
               <h2 className={styles.subtitle}>KAMERA</h2>
@@ -424,21 +422,21 @@ export default function Home() {
           </span>
         </Link> */}
         <Link
-          href="https://www.instagram.com/droneshots_heidelberg/"
+          href="https://www.youtube.com/channel/UC1TyGYAExdPEKKM8z6fSnNw"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Instagram Page
+          Youtube
           {/* <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span> */}
         </Link>
         <Link
-          href="https://www.youtube.com/channel/UC1TyGYAExdPEKKM8z6fSnNw"
+          href="https://www.instagram.com/droneshots_heidelberg/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Youtube Page
+          Instagram
           {/* <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span> */}
