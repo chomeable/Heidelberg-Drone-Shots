@@ -707,6 +707,14 @@
   .table tr td {
     padding: 0.5rem;
   }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: 642px) {
