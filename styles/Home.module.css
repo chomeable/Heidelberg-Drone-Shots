@@ -605,6 +605,8 @@
   display: flex;
   justify-content: space-evenly;
   width: 100vw;
+  padding: 0;
+  margin: 0;
 
 }
 
@@ -613,10 +615,12 @@
   flex-direction: column;
   align-items: center;
   width: 40%;
+  padding: 0;
+  margin: 0;
 }
 
 .equipment img {
-  height: 312px;
+  height: 300px;
 }
 
 .equipment p {
@@ -624,7 +628,10 @@
 }
 
 .slider {
+  margin: 0;
+  padding: 0;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
 }
 
