@@ -45,6 +45,25 @@ export default function Home() {
       }
     }
 
+    let touchstartX = 0
+    let touchendX = 0
+
+    function checkDirection() {
+      if (touchendX < touchstartX) updateSlider(-1)
+      if (touchendX > touchstartX) updateSlider(1)
+    }
+
+    document.addEventListener("touchstart", e => {
+      console.log("TEST")
+      touchstartX = e.changedTouches[0].screenX
+    })
+
+    document.addEventListener('touchend', e => {
+      touchendX = e.changedTouches[0].screenX
+      checkDirection()
+      setTimeout(() => { }, 500)
+    })
+
     renderSlider()
     recalculate()
   }, [])
@@ -120,25 +139,6 @@ export default function Home() {
     text.innerHTML = drones[slider].text
     sliderImg.src = drones[slider].img
   }
-
-  let touchstartX = 0
-  let touchendX = 0
-
-  function checkDirection() {
-    if (touchendX < touchstartX) alert('swiped left!')
-    if (touchendX > touchstartX) alert('swiped right!')
-  }
-
-  const sliderImg = document.createElement("sliderImg")
-  sliderImg.addEventListener("touchstart", e => {
-    console.log("TEST")
-    touchstartX = e.changedTouches[0].screenX
-  })
-
-  sliderImg.addEventListener('touchend', e => {
-    touchendX = e.changedTouches[0].screenX
-    checkDirection()
-  })
 
   const recalculate = e => {
     let price = startPrice;
