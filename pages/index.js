@@ -393,12 +393,12 @@ export default function Home() {
               <img src="https://res-5.cloudinary.com/grover/image/upload/e_trim/c_limit,f_auto,fl_png8.lossy,h_1280,q_auto,w_1280/v1600703377/w3qbobl36ahnmowjxjlb.png" />
               <p>
                 Die Kamera die zur Aufnahme genutzt wird ist eine GoPro Hero 9 Black. <br />
-                Sie wird gemeinsam mit einem ND filter für optimale farben und belichtung sorgt genutzt.
+                Sie wird gemeinsam mit einem ND-Filter, der für optimale farben und belichtung sorgt, genutzt.
               </p>
             </div>
           </div>
         </div>
-      </main >
+      </main>
 
       <footer className={styles.footer}>
         {/* <Link
