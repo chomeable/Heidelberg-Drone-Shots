@@ -460,23 +460,33 @@
   border-collapse: collapse;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
-  box-shadow: 0 0 25px #fd4d4d75;
+  box-shadow: 0 0 25px #ffffff75;
 }
 
 .tablehead th {
-  background-color: #FD4D4D;
+  /* background-color: #FD4D4D; */
+  background-color: white;
   padding: 17.5px;
   text-align: left;
-  border-bottom: 2px solid white;
+  color: black;
   box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 1);
+  margin-bottom: 0;
+  padding-bottom: 10px;
 }
 
 .table tr:nth-of-type(even) {
-  background-color: rgb(68, 68, 68);
+  background-color: rgb(209, 209, 209);
+  color: black;
+}
+
+.table tr:nth-of-type(odd) {
+  background-color: rgb(172, 172, 172);
+  color: black;
 }
 
 .table tr td {
   padding: 15px;
+  height: 10vh;
 }
 
 .tdtitle {
@@ -496,8 +506,10 @@
   height: fit-content;
   padding: 17.5px;
   border-radius: 7.5px;
-  background-color: #fd4d4dd0;
-  box-shadow: 0 0 26px #fd4d4d75;
+  /* background-color: #fd4d4dd0; */
+  background-color: white;
+  /* box-shadow: 0 0 26px #fd4d4d75; */
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.66);
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -505,6 +517,7 @@
   font-size: 18px;
   margin-top: 100px;
   margin-bottom: 50px;
+  color: black;
 }
 
 .calculator input[type="radio"] {
@@ -654,11 +667,11 @@
 
 @media screen and (max-width: 392px) {
   .table {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .tdtitle {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
     width: unset;
     text-align: center;
@@ -670,7 +683,7 @@
   }
 
   .table tr td {
-    padding: 0.5rem;
+    padding: 0.25rem;
   }
 }
 
