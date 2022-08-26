@@ -109,6 +109,12 @@
   font-size: 4rem;
 }
 
+.subtitle {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
 .title,
 .description {
   text-align: center;
@@ -376,7 +382,7 @@
 
 .formRow label {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   padding-top: 0.4rem;
   padding-left: 0.4rem;
 }
@@ -427,7 +433,7 @@
 
 .formArea label {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   padding-top: 0.4rem;
   padding-left: 0.4rem;
 }
@@ -512,7 +518,7 @@
   font-weight: 700;
 }
 
-.calculatorRow[name = "schnitt"] {
+.calculatorRow[name="schnitt"] {
   display: flex;
   align-items: center;
 }
@@ -569,6 +575,50 @@
   border-radius: 5px;
 }
 
+.equipments {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+
+}
+
+.equipment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.equipment img {
+  height: 312px;
+}
+
+.equipment p {
+  text-align: center;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+}
+
+.sliderButton {
+  border: none;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  font-size: 26px;
+  transition: 200ms ease-in-out;
+}
+
+.sliderButton:hover {
+  color: grey;
+  font-size: 30;
+  transform: scale(1.15);
+  transition: 200ms ease-in-out;
+
+}
+
 @media screen and (max-width: 392px) {
   .table {
     font-size: 12px;
@@ -620,6 +670,18 @@
 @media screen and (max-width: 725px) {
   .table {
     width: 95%;
+  }
+}
+
+@media screen and (max-width: 849px) {
+  .equipments {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .equipment {
+    width: 90vw;
   }
 }
 
