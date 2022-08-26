@@ -475,12 +475,12 @@
 }
 
 .table tr:nth-of-type(even) {
-  background-color: rgb(209, 209, 209);
+  background-color: rgb(224, 224, 224);
   color: black;
 }
 
 .table tr:nth-of-type(odd) {
-  background-color: rgb(172, 172, 172);
+  background-color: rgb(204, 204, 204);
   color: black;
 }
 
