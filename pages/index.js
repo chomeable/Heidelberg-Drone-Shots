@@ -121,6 +121,24 @@ export default function Home() {
     sliderImg.src = drones[slider].img
   }
 
+  let touchstartX = 0
+  let touchendX = 0
+
+  function checkDirection() {
+    if (touchendX < touchstartX) alert('swiped left!')
+    if (touchendX > touchstartX) alert('swiped right!')
+  }
+
+  const sliderImg = document.createElement("sliderImg")
+  sliderImg.addEventListener("touchstart", e => {
+    touchstartX = e.changedTouches[0].screenX
+  })
+
+  sliderImg.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX
+    checkDirection()
+  })
+
   const recalculate = e => {
     let price = startPrice;
 
@@ -373,9 +391,6 @@ export default function Home() {
                 <button className={styles.sliderButton} onClick={() => updateSlider(-1)}>
                   &#x25C0;
                 </button>
-                {
-
-                }
                 <img src="https://geprc.com/wp-content/uploads/2022/06/16-2.jpg" id="sliderImg" />
                 <button className={styles.sliderButton} onClick={() => updateSlider(1)}>
                   &#x25B6;
@@ -432,7 +447,7 @@ export default function Home() {
           </span> */}
         </Link>
         <Link
-          href="https://www.instagram.com/droneshots_heidelberg/"
+          href="https://www.instagram.com/droneshots.heidelberg/"
           target="_blank"
           rel="noopener noreferrer"
         >

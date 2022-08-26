@@ -655,6 +655,7 @@
   height: 32px;
   font-size: 26px;
   transition: 200ms ease-in-out;
+  color: #0070f3;
 }
 
 .sliderButton:hover {
@@ -662,7 +663,7 @@
   font-size: 30;
   transform: scale(1.15);
   transition: 200ms ease-in-out;
-
+  color: #0070f3;
 }
 
 @media screen and (max-width: 392px) {
