@@ -131,6 +131,7 @@ export default function Home() {
 
   const sliderImg = document.createElement("sliderImg")
   sliderImg.addEventListener("touchstart", e => {
+    console.log("TEST")
     touchstartX = e.changedTouches[0].screenX
   })
 
