@@ -650,6 +650,8 @@
 }
 
 .sliderButton {
+  margin: 0;
+  padding: 0;
   border: none;
   background-color: transparent;
   width: 32px;
