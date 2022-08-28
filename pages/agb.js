@@ -101,7 +101,7 @@ export default function agb() {
             {/* <object data="/pdf/AGB.pdf" type="application/pdf" width="100%" height="100%">
 
             </object> */}
-            <iframe src="/pdf/AGB.pdf" style={{ width: "100%", height: "500px" }} frameborder="0"></iframe>
+            <iframe src="/pdf/AGB.pdf" style={{ width: "100%", height: "500px" }} frameBorder="0"></iframe>
         </div>
     )
 }
