@@ -6,9 +6,15 @@
 
 .agb div {
     max-width: 750px;
+    margin: 5px;
 }
 
 .link {
     color: #0070f3;
     font-weight: 700;
+}
+
+.pdf {
+    width: 100vw;
+    height: 100vh;
 }

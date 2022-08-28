@@ -49,8 +49,14 @@ export default function Home() {
     let touchendX = 0
 
     function checkDirection() {
-      if (touchendX < touchstartX) updateSlider(-1)
-      if (touchendX > touchstartX) updateSlider(1)
+      if (touchendX < touchstartX) {
+        updateSlider(-1)
+        updateVid(-1)
+      }
+      if (touchendX > touchstartX) {
+        updateSlider(1)
+        updateVid(1)
+      }
     }
 
     document.addEventListener("touchstart", e => {
@@ -61,7 +67,7 @@ export default function Home() {
     document.addEventListener('touchend', e => {
       touchendX = e.changedTouches[0].screenX
       checkDirection()
-      setTimeout(() => { }, 500)
+      setTimeout(() => { }, 3000)
     })
 
     renderSlider()
@@ -105,8 +111,18 @@ export default function Home() {
       text: "Eine Propellergeschützte Drohne, optimal für Indoor-Flüge. <br /> Ermöglicht es nahe an Personen/Objekten zu fliegen. <br />Beschleunigung bis zu 100km/h. <br /> 1200 Umdrehungen pro Minute. <br /> Flugzeit 7-9 Minuten pro Batterie."
     },
     {
-      img: "https://ae01.alicdn.com/kf/H4a6bc7c42aa34aa88db0a84438139074i/IFlight-Nazgul5-V2-240mm-5-zoll-4S-6S-FPV-Drone-BNF-mit-SucceX-E-F4-45A.jpg_Q90.jpg_.webp",
+      img: "https://imgaz.staticbg.com/thumb/view/oaupload/banggood/images/7C/9C/bdeaca8e-c402-4c58-9e80-7afc1b08b528.jpg",
       text: "Eine schnelle und wendige Drohne, optimal für Verfolgungsshots oder Freestyle. <br /> Ermöglicht es atemberaubende Momente festzuhalten. <br />Beschleunigung bis zu 150km/h. <br /> 750 Umdrehungen pro Minute. <br /> Flugzeit 5-7 Minuten pro Batterie."
+    }
+  ]
+
+  const videos = [
+    {
+      vid: "https://www.youtube.com/embed/90oX0VLorfk",
+
+    },
+    {
+      vid: "https://www.youtube.com/embed/qO77uKndRfw"
     }
   ]
 
@@ -133,11 +149,33 @@ export default function Home() {
     }
   }
 
+  let vid = 0;
+
+  function updateVid(value) {
+    if (vid + value < 0) {
+      vid = videos.length - 1
+      renderVid()
+    }
+    else if (vid + value > videos.length - 1) {
+      vid = 0
+      renderVid()
+    }
+    else {
+      vid = vid + value
+      renderVid()
+    }
+  }
+
   function renderSlider() {
     const text = document.getElementById("sliderText")
-    const img = document.createElement("sliderImg")
+    const sliderImg = document.createElement("sliderImg")
     text.innerHTML = drones[slider].text
     sliderImg.src = drones[slider].img
+  }
+
+  function renderVid() {
+    const sliderVid = document.getElementById("sliderVid")
+    sliderVid.src = videos[vid].vid
   }
 
   const recalculate = e => {
@@ -217,7 +255,18 @@ export default function Home() {
 
         <div className={styles.sec1}>
           <h1 className={styles.showreel}>PROJEKTE</h1>
-          <h3 className={styles.coming}>COMING SOON</h3>
+          <div className={styles.equipment}>
+            <div className={styles.slider}>
+              <button className={styles.sliderButton} onClick={() => updateVid(-1)}>
+                &#x25C0;
+              </button>
+              <iframe className={styles.vid} id="sliderVid" src="https://www.youtube.com/embed/90oX0VLorfk" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <button className={styles.sliderButton} onClick={() => updateVid(1)}>
+                &#x25B6;
+              </button>
+            </div>
+          </div>
+          <br />
           <br />
           <div className={styles.grid}>
             {/* <div className={styles.row} id="row">
@@ -297,30 +346,30 @@ export default function Home() {
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody className={styles.tbody}>
                 <tr>
                   <td className={styles.tdtitle}>Pauschalbetrag</td>
-                  <td>50€ Privatpersonen <br /> 75€ Unternehmen</td>
-                  <td className={styles.tdinfo}>Gebühr, verbindlich bei <u>jedem</u> Projekt.</td>
+                  <td className={styles.tdprice}>50€ Privatpersonen <br /> 75€ Unternehmen</td>
+                  <td className={styles.tdinfo}>Gebühr, verbindlich bei jedem Projekt.</td>
                 </tr>
                 <tr>
                   <td className={styles.tdtitle}>Aufwand</td>
-                  <td>12,50€ - 120,00€</td>
-                  <td className={styles.tdinfo}>Abhängig von der <u>Schwierigkeit</u> und der <u>Drehzeit</u> des Projektes (1-10).</td>
+                  <td className={styles.tdprice}>12,50€ - 120,00€</td>
+                  <td className={styles.tdinfo}>Abhängig von der Schwierigkeit und der Drehzeit des Projektes (1-10).</td>
                 </tr>
                 <tr>
                   <td className={styles.tdtitle}>Gerätekosten</td>
-                  <td>30€</td>
-                  <td className={styles.tdinfo}>Die Kosten für die <u>Wartung</u> des <a href="#equipment" className={styles.atag}>Equipments</a>.</td>
+                  <td className={styles.tdprice}>30€</td>
+                  <td className={styles.tdinfo}>Die Kosten für die Wartung des <a href="#equipment" className={styles.atag}>Equipments</a>.</td>
                 </tr>
                 <tr>
                   <td className={styles.tdtitle}>Videobearbeitung <br /> <p className={styles.nonthicc}>optional</p></td>
-                  <td>20€</td>
+                  <td className={styles.tdprice}>20€</td>
                   <td className={styles.tdinfo}>Professioneller Videoschnitt nach Wünschen des Kunden.</td>
                 </tr>
                 <tr>
                   <td className={styles.tdtitle}>Stabilisation Farbkorrektur <br /> <p className={styles.nonthicc}>optional</p></td>
-                  <td><s>20€</s>    <strong>KOSTENLOS</strong></td>
+                  <td className={styles.tdprice}><s>20€</s>    <strong>KOSTENLOS</strong></td>
                   <td className={styles.tdinfo}>Stabilisierung und Farbkorrektur der Aufnahme.</td>
                 </tr>
               </tbody>
@@ -468,7 +517,7 @@ export default function Home() {
           </span> */}
         </Link>
         <Link
-          href="/agb"
+          href="/pdf/AGB.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >

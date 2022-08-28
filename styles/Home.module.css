@@ -301,7 +301,7 @@
   color: white;
   line-height: 1.15;
   font-size: 4rem;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
@@ -456,8 +456,8 @@
 
 .table {
   width: 650px;
-  border-spacing: 0;
-  border-collapse: collapse;
+  border-spacing: 1px 1px;
+  border-collapse: separate;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 25px #ffffff75;
@@ -492,12 +492,21 @@
 .tdtitle {
   font-size: 17px;
   font-weight: 700;
-  width: 25.4%;
+  width: 33%;
   text-align: center;
 }
 
 .tdinfo {
-  width: 45%;
+  width: 33%;
+  text-align: center;
+}
+
+.tdprice {
+  width: 33%;
+  text-align: center;
+}
+
+.tablehead th {
   text-align: center;
 }
 
@@ -646,7 +655,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100vw;
 }
 
 .sliderButton {
@@ -738,6 +746,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .slider {
+    width: 100vw;
   }
 
   .equipment {
