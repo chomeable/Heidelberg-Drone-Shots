@@ -266,8 +266,10 @@ export default function Home() {
               </button>
             </div>
           </div>
+
           <br />
           <br />
+
           <div className={styles.grid}>
             {/* <div className={styles.row} id="row">
               <iframe className={styles.vid} src="https://www.youtube.com/embed/90oX0VLorfk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
