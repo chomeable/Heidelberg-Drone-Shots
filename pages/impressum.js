@@ -9,7 +9,7 @@ export default function impressum() {
                 <h1>Impressum</h1>
 
                 <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
-                <p>Robin Lehmann, Tibor Molnar, Wada Hailu<br />
+                <p>Robin Lehmann, Tibor Molnar, Wada Hailu, Robin Lehmann<br />
                     69126 Heidelberg</p>
 
                 <h2>Kontakt</h2>
