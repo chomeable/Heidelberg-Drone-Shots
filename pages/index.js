@@ -111,18 +111,21 @@ export default function Home() {
       text: "Eine Propellergeschützte Drohne, optimal für Indoor-Flüge. <br /> Ermöglicht es nahe an Personen/Objekten zu fliegen. <br />Beschleunigung bis zu 100km/h. <br /> 1200 Umdrehungen pro Minute. <br /> Flugzeit 7-9 Minuten pro Batterie."
     },
     {
-      img: "https://imgaz.staticbg.com/thumb/view/oaupload/banggood/images/7C/9C/bdeaca8e-c402-4c58-9e80-7afc1b08b528.jpg",
+      img: "https://imgaz1.staticbg.com/thumb/view/oaupload/banggood/images/7C/9C/bdeaca8e-c402-4c58-9e80-7afc1b08b528.jpg",
       text: "Eine schnelle und wendige Drohne, optimal für Verfolgungsshots oder Freestyle. <br /> Ermöglicht es atemberaubende Momente festzuhalten. <br />Beschleunigung bis zu 150km/h. <br /> 750 Umdrehungen pro Minute. <br /> Flugzeit 5-7 Minuten pro Batterie."
     }
   ]
 
   const videos = [
     {
-      vid: "https://www.youtube.com/embed/90oX0VLorfk",
+      vid: "https://www.youtube.com/embed/kTWoeqPXpuo",
 
     },
     {
-      vid: "https://www.youtube.com/embed/qO77uKndRfw"
+      vid: "https://www.youtube.com/embed/wat4SlyJSHs"
+    },
+    {
+      vid: "https://www.youtube.com/embed/7JhWYBXatrw"
     }
   ]
 
@@ -168,9 +171,10 @@ export default function Home() {
 
   function renderSlider() {
     const text = document.getElementById("sliderText")
-    const sliderImg = document.createElement("sliderImg")
+    const sliderImg = document.getElementById("sliderImg")
     text.innerHTML = drones[slider].text
     sliderImg.src = drones[slider].img
+    console.log(drones[slider].img)
   }
 
   function renderVid() {
@@ -260,7 +264,7 @@ export default function Home() {
               <button className={styles.sliderButton} onClick={() => updateVid(-1)}>
                 &#x25C0;
               </button>
-              <iframe className={styles.vid} id="sliderVid" src="https://www.youtube.com/embed/90oX0VLorfk" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe className={styles.vid} id="sliderVid" src="https://www.youtube.com/embed/kTWoeqPXpuo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <button className={styles.sliderButton} onClick={() => updateVid(1)}>
                 &#x25B6;
               </button>
@@ -460,7 +464,7 @@ export default function Home() {
               <img src="https://res-5.cloudinary.com/grover/image/upload/e_trim/c_limit,f_auto,fl_png8.lossy,h_1280,q_auto,w_1280/v1600703377/w3qbobl36ahnmowjxjlb.png" />
               <p>
                 Die Kamera die zur Aufnahme genutzt wird ist eine GoPro Hero 9 Black. <br />
-                Sie wird gemeinsam mit einem ND-Filter, der für optimale farben und belichtung sorgt, genutzt.
+                Sie wird gemeinsam mit einem ND-Filter genutzt, der für optimale farben und belichtung sorgt.
               </p>
             </div>
           </div>
