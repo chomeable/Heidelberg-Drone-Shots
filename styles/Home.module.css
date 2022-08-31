@@ -586,6 +586,7 @@
   font-size: 20px;
   align-self: center;
   min-width: 60px;
+  margin: 0;
 }
 
 .calculatorRow {
