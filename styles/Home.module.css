@@ -566,14 +566,16 @@
   align-items: center;
 }
 
-.calculatorRow input[type="number"] {
-  margin-top: 10px;
+.calculatorRow input[type="range"] {
+  /* margin-top: 7.5px;
   font-size: 18px;
-  border: none;
-  padding: 5px;
+  border: 2.5px solid black;
+  padding: 3px;
   border-radius: 7.5px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.33);
-  width: 17%;
+  width: 17%; */
+  width: 100%;
+  margin-top: 10px;
 }
 
 .calculatorRow input[type="checkbox"] {
@@ -588,6 +590,8 @@
   min-width: 60px;
   margin: 0;
 }
+
+
 
 .calculatorRow {
   width: 80%;
@@ -643,7 +647,7 @@
 }
 
 .equipment img {
-  height: 300px;
+  width: 300px;
 }
 
 .equipment p {

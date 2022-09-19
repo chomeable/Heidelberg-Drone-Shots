@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useLayoutEffect } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 const rabatt = 0;
@@ -129,6 +129,17 @@ export default function Home() {
     }
   ]
 
+  const goproList = [
+    {
+      img: "https://i.imgur.com/LzVTLb3.png",
+      text: "Die Kamera die zur Aufnahme genutzt wird ist eine GoPro Hero 9 Black."
+    },
+    {
+      img: "https://i.imgur.com/0GRjwqu.png",
+      text: "Sie wird gemeinsam mit einem ND- Filter genutzt, der für optimale farben und belichtung sorgt."
+    }
+  ]
+
   let slider = 0;
 
   function updateSlider(value) {
@@ -169,6 +180,23 @@ export default function Home() {
     }
   }
 
+  let gopro = 0;
+
+  function updateGoProSlider(value) {
+    if (gopro + value < 0) {
+      gopro = goproList.length - 1
+      renderGoPro()
+    }
+    else if (gopro + value > goproList.length - 1) {
+      gopro = 0
+      renderGoPro()
+    }
+    else {
+      gopro = vid + value
+      renderGoPro()
+    }
+  }
+
   function renderSlider() {
     const text = document.getElementById("sliderText")
     const sliderImg = document.getElementById("sliderImg")
@@ -180,6 +208,14 @@ export default function Home() {
   function renderVid() {
     const sliderVid = document.getElementById("sliderVid")
     sliderVid.src = videos[vid].vid
+  }
+
+  function renderGoPro() {
+    const text = document.getElementById("goproSliderText")
+    const sliderImg = document.getElementById("goproSliderImg")
+    text.innerHTML = goproList[gopro].text
+    sliderImg.src = goproList[gopro].img
+    console.log(goproList[gopro].text)
   }
 
   const recalculate = e => {
@@ -199,6 +235,9 @@ export default function Home() {
     price += attributes.pauschal == 'privat' ? 50 : 75;
     price += aufwande[attributes.aufwand - 1]
     price += attributes.schnitt == true ? 20 : 0;
+
+    const aufwandNumber = document.getElementById("aufwandNumber")
+    aufwandNumber.innerHTML = attributes.aufwand
 
     document.getElementById('calculatorResult').innerHTML = price + '€*'
     if (rabatt > 0) {
@@ -397,8 +436,11 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={styles.calculatorRow}>
-                  <label htmlFor="aufwand">Aufwand 1-10</label>
-                  <input type="number" name="aufwand" max={10} min={1} id="aufwand" onInput={recalculate} defaultValue={1} />
+                  <div style={{ display: "flex", justifyContent: "space-between", height: "20px", alignItems: "center", marginTop: "10px" }}>
+                    <label htmlFor="aufwand">Aufwand 1-10</label>
+                    <p id="aufwandNumber"></p>
+                  </div>
+                  <input type="range" name="aufwand" max="10" min="1" id="aufwand" onInput={recalculate} defaultValue={1} />
                 </div>
                 <div className={styles.calculatorRow} name="schnitt">
                   <input type="checkbox" name="schnitt" id="schnitt" onInput={recalculate} defaultChecked={true} />
@@ -461,10 +503,18 @@ export default function Home() {
             <div className={styles.equipment}>
               <h2 className={styles.subtitle}>KAMERA</h2>
               <br />
-              <img src="https://res-5.cloudinary.com/grover/image/upload/e_trim/c_limit,f_auto,fl_png8.lossy,h_1280,q_auto,w_1280/v1600703377/w3qbobl36ahnmowjxjlb.png" />
-              <p>
-                Die Kamera die zur Aufnahme genutzt wird ist eine GoPro Hero 9 Black. <br />
-                Sie wird gemeinsam mit einem ND-Filter genutzt, der für optimale farben und belichtung sorgt.
+              <div className={styles.slider}>
+                <button className={styles.sliderButton} onClick={() => updateGoProSlider(-1)}>
+                  &#x25C0;
+                </button>
+                <img src="https://i.imgur.com/LzVTLb3.png" id="goproSliderImg" />
+                <button className={styles.sliderButton} onClick={() => updateGoProSlider(1)}>
+                  &#x25B6;
+                </button>
+              </div>
+
+              <p id="goproSliderText">
+                Die Kamera die zur Aufnahme genutzt wird ist eine GoPro Hero 9 Black.
               </p>
             </div>
           </div>
