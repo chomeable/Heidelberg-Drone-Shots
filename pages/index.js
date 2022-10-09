@@ -582,6 +582,16 @@ export default function Home() {
           </span> */}
         </Link>
         <Link
+          href="/faq"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          FAQ
+          {/* <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span> */}
+        </Link>
+        <Link
           href="/impressum"
           target="_blank"
           rel="noopener noreferrer"
