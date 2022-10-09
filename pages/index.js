@@ -143,9 +143,6 @@ export default function Home() {
   let slider = 0;
 
   function updateSlider(value) {
-    // console.log(drones.length)
-    // console.log(drones[1])
-    // console.log(slider + value)
     if (slider + value < 0) {
       slider = drones.length - 1
       console.log(slider)
@@ -256,6 +253,18 @@ export default function Home() {
     }, 700)
   }
 
+  const getCurrentDate = () => {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+    console.log(today)
+    return today;
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -341,7 +350,7 @@ export default function Home() {
               <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className={styles.shapefill}></path>
             </svg>
           </div>
-          <form action="https://formsubmit.co/0da830855b437249ecd6df8913af57a0" method="POST" className={styles.form}>
+          <form action="https://formsubmit.co/c5705b4e8ce652521920457b2428864c" method="POST" className={styles.form}>
             {/* <form action="/api/form" method="POST" className={styles.form}> */}
             <h1>KONTAKT</h1>
             <div className={styles.formRow}>
@@ -363,12 +372,17 @@ export default function Home() {
                 <option value="Andere">Andere</option>
               </select>
             </div>
+            <div className={styles.formRow}>
+              <label>DATUM</label>
+              <input type="date" defaultValue={getCurrentDate()} min={getCurrentDate()}></input>
+            </div>
             <div className={styles.formArea}>
               <label>ERZÄHLEN SIE UNS ÜBER IHRE IDEE *</label>
               <textarea name="message" required placeholder="Schreiben sie hier"></textarea>
             </div>
             <button type="submit">Send</button>
             <p>Mit dem versenden dieses Formulares stimmen sie den <Link href="/agb"><a className={styles.atag}>AGB</a></Link> zu</p>
+            <p>Die Einsendung wird so früh wie möglich bearbeitet.</p>
           </form>
           <div className={styles.wave}>
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -416,6 +430,11 @@ export default function Home() {
                   <td className={styles.tdtitle}>Stabilisation Farbkorrektur <br /> <p className={styles.nonthicc}>optional</p></td>
                   <td className={styles.tdprice}><s>20€</s>    <strong>KOSTENLOS</strong></td>
                   <td className={styles.tdinfo}>Stabilisierung und Farbkorrektur der Aufnahme.</td>
+                </tr>
+                <tr>
+                  <td className={styles.tdtitle}>Fragen</td>
+                  <td className={styles.tdprice}><Link href="/faq/preise">FAQ</Link></td>
+                  <td className={styles.tdinfo}>Wollen sie mehr darüber wissen wie der Preis zusammengesetzt wird?</td>
                 </tr>
               </tbody>
             </table>
@@ -489,7 +508,7 @@ export default function Home() {
                 <button className={styles.sliderButton} onClick={() => updateSlider(-1)}>
                   &#x25C0;
                 </button>
-                <img src="https://geprc.com/wp-content/uploads/2022/06/16-2.jpg" id="sliderImg" />
+                <img src="https://geprc.com/wp-content/uploads/2022/06/16-2.jpg" id="sliderImg" style={{ borderRadius: "10px" }} />
                 <button className={styles.sliderButton} onClick={() => updateSlider(1)}>
                   &#x25B6;
                 </button>

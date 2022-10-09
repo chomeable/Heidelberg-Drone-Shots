@@ -84,7 +84,7 @@
 
 .footer {
   width: 100%;
-  height: 100px;
+  height: 110px;
   border-top: 1px solid #eaeaea;
   display: flex;
   justify-content: center;
@@ -97,6 +97,8 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .title a {
@@ -461,6 +463,11 @@
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 25px #ffffff75;
+}
+
+.table div {
+  background-color: rgb(224, 224, 224);
+  width: 100%;
 }
 
 .tablehead th {

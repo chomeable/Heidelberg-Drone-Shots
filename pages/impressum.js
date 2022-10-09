@@ -1,10 +1,16 @@
 import React from 'react'
 import styles from '../styles/Impressum.module.css'
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default function impressum() {
     return (
         <div className={styles.container}>
+            <Head>
+                <title>droneshots heidelberg</title>
+                <meta name="description" content="Professionelle Drohnenaufnahmen" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div className={styles.impressum}>
                 <h1>Impressum</h1>
 
