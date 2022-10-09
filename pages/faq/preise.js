@@ -32,8 +32,8 @@ export default function preise() {
                 <div>
                     <p>Stabilisation eines Videos ist wichtig und das best mögliche aus dem Video rauszubekommen.</p>
                     <div className={styles.videos}>
-                        <video src="/videos/vid2.mp4" autoPlay loop={true}></video>
                         <video src="/videos/vid3.mp4" autoPlay loop={true}></video>
+                        <video src="/videos/vid2.mp4" autoPlay loop={true}></video>
                     </div>
                 </div>
             </div>

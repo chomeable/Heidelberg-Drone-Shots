@@ -373,7 +373,7 @@ export default function Home() {
               </select>
             </div>
             <div className={styles.formRow}>
-              <label>DATUM</label>
+              <label>PROJEKTDATUM</label>
               <input type="date" defaultValue={getCurrentDate()} min={getCurrentDate()}></input>
             </div>
             <div className={styles.formArea}>

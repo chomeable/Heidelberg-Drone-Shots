@@ -6,7 +6,6 @@ export default function faq() {
     return (
         <div>
             <div className={styles.header}>
-                <div><Link href="/faq">FAQ</Link></div>
                 <h2 className={styles.title}>FAQ</h2>
                 <div><Link href="/">HOME</Link></div>
             </div>
