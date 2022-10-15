@@ -31,10 +31,7 @@ export default function preise() {
                 <h1>Stabilisation</h1>
                 <div>
                     <p>Stabilisation eines Videos ist wichtig und das best mögliche aus dem Video rauszubekommen.</p>
-                    <div className={styles.videos}>
-                        <video src="/videos/vid3.mp4" autoPlay loop={true}></video>
-                        <video src="/videos/vid2.mp4" autoPlay loop={true}></video>
-                    </div>
+                    <iframe className={styles.video} src="https://www.youtube.com/embed/LiP_3bbbEi8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </div>
             </div>
 

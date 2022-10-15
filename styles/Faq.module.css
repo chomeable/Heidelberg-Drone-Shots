@@ -67,15 +67,9 @@
     grid-row-gap: 0px;
 }
 
-.videos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.videos video {
-    width: 49.5%;
-    margin-top: 10px;
+.video {
+    aspect-ratio: 16/9;
+    width: 80%;
     border-radius: 10px;
 }
 
@@ -88,11 +82,7 @@
         grid-row-gap: 0px;
     }
 
-    .videos {
-        flex-direction: column;
-    }
-
-    .videos video {
+    .video {
         width: 100%;
     }
 }
