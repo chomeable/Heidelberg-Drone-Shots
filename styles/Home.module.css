@@ -84,12 +84,13 @@
 
 .footer {
   width: 100%;
-  height: 110px;
+  min-height: 110px;
+  height: fit-content;
   border-top: 1px solid #eaeaea;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .footer a {
@@ -511,6 +512,11 @@
 .tdprice {
   width: 33%;
   text-align: center;
+}
+
+.tdprice a {
+  color: #0070f3;
+  font-weight: 700;
 }
 
 .tablehead th {

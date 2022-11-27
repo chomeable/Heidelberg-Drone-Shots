@@ -21,6 +21,8 @@ const startPrice = 30;
 
 export default function Home() {
 
+  const [hasdate, setHasdate] = useState(false)
+
   useLayoutEffect(() => {
     window.onscroll = () => {
       let scrollTop = document.documentElement.scrollTop;
@@ -71,7 +73,7 @@ export default function Home() {
     })
 
     renderSlider()
-    recalculate()
+    // recalculate()
   }, [])
   // useEffect(() => {
   //   document.addEventListener('DOMContentLoaded', () => {
@@ -107,11 +109,11 @@ export default function Home() {
 
   const drones = [
     {
-      img: "https://geprc.com/wp-content/uploads/2022/06/16-2.jpg",
+      img: "/photos/cinelog35.png",
       text: "Eine Propellergeschützte Drohne, optimal für Indoor-Flüge. <br /> Ermöglicht es nahe an Personen/Objekten zu fliegen. <br />Beschleunigung bis zu 100km/h. <br /> 1200 Umdrehungen pro Minute. <br /> Flugzeit 7-9 Minuten pro Batterie."
     },
     {
-      img: "https://imgaz1.staticbg.com/thumb/view/oaupload/banggood/images/7C/9C/bdeaca8e-c402-4c58-9e80-7afc1b08b528.jpg",
+      img: "/photos/nazgul5.png",
       text: "Eine schnelle und wendige Drohne, optimal für Verfolgungsshots oder Freestyle. <br /> Ermöglicht es atemberaubende Momente festzuhalten. <br />Beschleunigung bis zu 150km/h. <br /> 750 Umdrehungen pro Minute. <br /> Flugzeit 5-7 Minuten pro Batterie."
     }
   ]
@@ -135,7 +137,7 @@ export default function Home() {
       text: "Die Kamera die zur Aufnahme genutzt wird ist eine GoPro Hero 9 Black."
     },
     {
-      img: "https://i.imgur.com/0GRjwqu.png",
+      img: "/photos/nd.png",
       text: "Sie wird gemeinsam mit einem ND- Filter genutzt, der für optimale farben und belichtung sorgt."
     }
   ]
@@ -215,34 +217,34 @@ export default function Home() {
     console.log(goproList[gopro].text)
   }
 
-  const recalculate = e => {
-    let price = startPrice;
+  // const recalculate = e => {
+  //   let price = startPrice;
 
-    if (e) {
-      if (e.target.name == 'aufwand' && e.target.value > 10)
-        attributes[e.target.name] = 10
-      else if (e.target.name == 'aufwand' && e.target.value < 1)
-        attributes[e.target.name] = 1
-      else if (e.target.name == 'schnitt')
-        attributes[e.target.name] = e.target.checked
-      else
-        attributes[e.target.name] = e.target.value
-    }
+  //   if (e) {
+  //     if (e.target.name == 'aufwand' && e.target.value > 10)
+  //       attributes[e.target.name] = 10
+  //     else if (e.target.name == 'aufwand' && e.target.value < 1)
+  //       attributes[e.target.name] = 1
+  //     else if (e.target.name == 'schnitt')
+  //       attributes[e.target.name] = e.target.checked
+  //     else
+  //       attributes[e.target.name] = e.target.value
+  //   }
 
-    price += attributes.pauschal == 'privat' ? 50 : 75;
-    price += aufwande[attributes.aufwand - 1]
-    price += attributes.schnitt == true ? 20 : 0;
+  //   price += attributes.pauschal == 'privat' ? 50 : 75;
+  //   price += aufwande[attributes.aufwand - 1]
+  //   price += attributes.schnitt == true ? 20 : 0;
 
-    const aufwandNumber = document.getElementById("aufwandNumber")
-    aufwandNumber.innerHTML = attributes.aufwand
+  //   const aufwandNumber = document.getElementById("aufwandNumber")
+  //   aufwandNumber.innerHTML = attributes.aufwand
 
-    document.getElementById('calculatorResult').innerHTML = price + '€*'
-    if (rabatt > 0) {
-      let rabattPrice = Math.round(price * (100 - rabatt)) / 100;
-      // document.getElementById('calculatorResult').innerHTML = `${price}€ <h7 style="font-size: 15px">-${rabatt}%</h7> = ${rabattPrice}€`
-      document.getElementById('calculatorResult').innerHTML = `${rabattPrice}€* (inkl. -${rabatt}%)`
-    }
-  }
+  //   document.getElementById('calculatorResult').innerHTML = price + '€*'
+  //   if (rabatt > 0) {
+  //     let rabattPrice = Math.round(price * (100 - rabatt)) / 100;
+  //     // document.getElementById('calculatorResult').innerHTML = `${price}€ <h7 style="font-size: 15px">-${rabatt}%</h7> = ${rabattPrice}€`
+  //     document.getElementById('calculatorResult').innerHTML = `${rabattPrice}€* (inkl. -${rabatt}%)`
+  //   }
+  // }
 
   const closeBanner = () => {
     document.getElementById('banner').style.transition = '500ms'
@@ -374,7 +376,14 @@ export default function Home() {
             </div>
             <div className={styles.formRow}>
               <label>PROJEKTDATUM</label>
-              <input type="date" defaultValue={getCurrentDate()} min={getCurrentDate()}></input>
+              <input type="checkbox" checked={hasdate} onChange={(e) => setHasdate(e.target.checked)} name="hasdate" />
+              {
+                hasdate ? (
+                  <input type="date" defaultValue={getCurrentDate()} min={getCurrentDate()} name="date"></input>
+                ) : (
+                  <></>
+                )
+              }
             </div>
             <div className={styles.formArea}>
               <label>ERZÄHLEN SIE UNS ÜBER IHRE IDEE *</label>
@@ -391,7 +400,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.sec3}>
+        {/* <div className={styles.sec3}>
           <h1 className={styles.showreel}>PREISE</h1>
           <br />
           <br />
@@ -433,7 +442,7 @@ export default function Home() {
                 </tr>
                 <tr>
                   <td className={styles.tdtitle}>Fragen</td>
-                  <td className={styles.tdprice}><Link href="/faq/preise">FAQ</Link></td>
+                  <td className={styles.tdprice} ><Link href="/faq/preise" >FAQ</Link></td>
                   <td className={styles.tdinfo}>Wollen sie mehr darüber wissen wie der Preis zusammengesetzt wird?</td>
                 </tr>
               </tbody>
@@ -448,7 +457,6 @@ export default function Home() {
                     <input type="radio" name="pauschal" defaultChecked value="privat" id="privatperson" onInput={recalculate} />
                     <label htmlFor="privatperson">Privatpersonen</label>
                   </div>
-                  {/* &lt;&gt; */}
                   <div>
                     <input type="radio" name="pauschal" value="unternehmen" id="unternehmer" onInput={recalculate} />
                     <label htmlFor="unternehmer">Unternehmen</label>
@@ -483,17 +491,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className={styles.sec4}>
-          <div className={styles.wave2}>
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className={styles.shapefill}></path>
-            </svg>
-          </div>
-        </div>
+        <div className={styles.sec3}>
 
-        <div className={styles.sec5}>
           <h1 className={styles.title} id="equipment">EQUIPMENT</h1>
 
           <br />
@@ -508,7 +509,7 @@ export default function Home() {
                 <button className={styles.sliderButton} onClick={() => updateSlider(-1)}>
                   &#x25C0;
                 </button>
-                <img src="https://geprc.com/wp-content/uploads/2022/06/16-2.jpg" id="sliderImg" style={{ borderRadius: "10px" }} />
+                <img src="/photos/cinelog" id="sliderImg" style={{ borderRadius: "10px", backgroundColor: "transparent" }} />
                 <button className={styles.sliderButton} onClick={() => updateSlider(1)}>
                   &#x25B6;
                 </button>
@@ -581,16 +582,13 @@ export default function Home() {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span> */}
         </Link>
-        <Link
+        {/* <Link
           href="/faq"
           target="_blank"
           rel="noopener noreferrer"
         >
           FAQ
-          {/* <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span> */}
-        </Link>
+        </Link> */}
         <Link
           href="/impressum"
           target="_blank"
