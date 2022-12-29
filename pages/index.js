@@ -114,7 +114,7 @@ export default function Home() {
     },
     {
       img: "/photos/nazgul5.png",
-      text: "Eine schnelle und wendige Drohne, optimal für Verfolgungsshots oder Freestyle. <br /> Ermöglicht es atemberaubende Momente festzuhalten. <br />Beschleunigung bis zu 150km/h. <br /> 750 Umdrehungen pro Minute. <br /> Flugzeit 5-7 Minuten pro Batterie."
+      text: "<p style='color: #DC3545'><strong>ZURZEIT AUSER BETRIEB</strong></p> Eine schnelle und wendige Drohne, optimal für Verfolgungsshots oder Freestyle. <br /> Ermöglicht es atemberaubende Momente festzuhalten. <br />Beschleunigung bis zu 150km/h. <br /> 750 Umdrehungen pro Minute. <br /> Flugzeit 5-7 Minuten pro Batterie."
     }
   ]
 
@@ -137,8 +137,12 @@ export default function Home() {
       text: "Die Kamera die zur Aufnahme genutzt wird ist eine GoPro Hero 9 Black."
     },
     {
+      img: "/photos/action2.png",
+      text: "Eine Kamera leichter und daher besser geeignet für Indoor Flüge als die GoPro."
+    },
+    {
       img: "/photos/nd.png",
-      text: "Sie wird gemeinsam mit einem ND- Filter genutzt, der für optimale farben und belichtung sorgt."
+      text: "Die GoPro wird gemeinsam mit einem ND- Filter genutzt, der für optimale farben und belichtung sorgt."
     }
   ]
 
@@ -191,7 +195,7 @@ export default function Home() {
       renderGoPro()
     }
     else {
-      gopro = vid + value
+      gopro = gopro + value
       renderGoPro()
     }
   }
