@@ -107,12 +107,12 @@ export default function Home() {
 
   const drones = [
     {
-      img: "/photos/cinelog35.png",
-      text: "Eine Propellergeschützte Drohne, optimal für Indoor-Flüge. <br /> Ermöglicht es nahe an Personen/Objekten zu fliegen. <br />Beschleunigung bis zu 100km/h. <br /> 1200 Umdrehungen pro Minute. <br /> Flugzeit 7-9 Minuten pro Batterie."
+      img: "https://res.cloudinary.com/dyqweatbz/image/upload/v1684252375/droneshots-heidelberg/cinelog35_ckkdw9.png",
+      text: "Eine Propellergeschützte Drohne, optimal für Indoor-Flüge. <br /> Ermöglicht es nahe an Personen/Objekten zu fliegen. <br />Beschleunigung bis zu 80km/h. <br /> 1200 Umdrehungen pro Minute. <br /> Flugzeit 7-9 Minuten pro Batterie."
     },
     {
-      img: "/photos/nazgul5.png",
-      text: "<p style='color: #DC3545'><strong>ZURZEIT AUSER BETRIEB</strong></p> Eine schnelle und wendige Drohne, optimal für Verfolgungsshots oder Freestyle. <br /> Ermöglicht es atemberaubende Momente festzuhalten. <br />Beschleunigung bis zu 150km/h. <br /> 750 Umdrehungen pro Minute. <br /> Flugzeit 5-7 Minuten pro Batterie."
+      img: "https://res.cloudinary.com/dyqweatbz/image/upload/v1684252374/droneshots-heidelberg/nazgul5_pmce8i.png",
+      text: "Eine schnelle und wendige Drohne, optimal für Verfolgungsshots oder Freestyle. <br /> Ermöglicht es atemberaubende Momente festzuhalten. <br />Beschleunigung bis zu 150km/h. <br /> 750 Umdrehungen pro Minute. <br /> Flugzeit 5-7 Minuten pro Batterie."
     }
   ]
 
@@ -135,11 +135,11 @@ export default function Home() {
       text: "Die Kamera die zur Aufnahme genutzt wird ist eine GoPro Hero 9 Black."
     },
     {
-      img: "/photos/action2.png",
+      img: "https://res.cloudinary.com/dyqweatbz/image/upload/v1684252375/droneshots-heidelberg/action2_snzh9u.png",
       text: "Eine Kamera leichter und daher besser geeignet für Indoor Flüge als die GoPro."
     },
     {
-      img: "/photos/nd.png",
+      img: "https://res.cloudinary.com/dyqweatbz/image/upload/v1684252375/droneshots-heidelberg/nd_dano0w.png",
       text: "Die GoPro wird gemeinsam mit einem ND- Filter genutzt, der für optimale farben und belichtung sorgt."
     }
   ]
@@ -285,6 +285,7 @@ export default function Home() {
             <img src='/drone-icon.ico' height='70px' /> 
           </div> */}
           {/* <img src='/drone-icon.ico' /> */}
+
           <embed src="/DH-Logo.svg" height="175" width="175" />
           <br />
 
@@ -505,7 +506,7 @@ export default function Home() {
                 <button className={styles.sliderButton} onClick={() => updateSlider(-1)}>
                   &#x25C0;
                 </button>
-                <img alt="sliderDrones" src="/photos/cinelog35.png" id="sliderImg" style={{ borderRadius: "10px", backgroundColor: "transparent" }} />
+                <img alt="sliderDrones" src="https://res.cloudinary.com/dyqweatbz/image/upload/v1684252375/droneshots-heidelberg/cinelog35_ckkdw9.png" id="sliderImg" style={{ borderRadius: "10px", backgroundColor: "transparent" }} />
                 <button className={styles.sliderButton} onClick={() => updateSlider(1)}>
                   &#x25B6;
                 </button>
