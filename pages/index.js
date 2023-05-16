@@ -26,7 +26,6 @@ export default function Home() {
   useLayoutEffect(() => {
     window.onscroll = () => {
       let scrollTop = document.documentElement.scrollTop;
-      console.log(scrollTop)
       if (scrollTop > 440) {
         document.querySelectorAll('#row').forEach(e => {
           e.style = "transition: 1500ms; transform: scale(1);"
@@ -62,7 +61,6 @@ export default function Home() {
     }
 
     document.addEventListener("touchstart", e => {
-      console.log("TEST")
       touchstartX = e.changedTouches[0].screenX
     })
 
@@ -151,17 +149,14 @@ export default function Home() {
   function updateSlider(value) {
     if (slider + value < 0) {
       slider = drones.length - 1
-      console.log(slider)
       renderSlider()
     }
     else if (slider + value > drones.length - 1) {
       slider = 0
-      console.log(slider)
       renderSlider()
     }
     else {
       slider = slider + value
-      console.log(slider)
       renderSlider()
     }
   }
@@ -205,7 +200,6 @@ export default function Home() {
     const sliderImg = document.getElementById("sliderImg")
     text.innerHTML = drones[slider].text
     sliderImg.src = drones[slider].img
-    console.log(drones[slider].img)
   }
 
   function renderVid() {
@@ -218,7 +212,6 @@ export default function Home() {
     const sliderImg = document.getElementById("goproSliderImg")
     text.innerHTML = goproList[gopro].text
     sliderImg.src = goproList[gopro].img
-    console.log(goproList[gopro].text)
   }
 
   // const recalculate = e => {
@@ -267,12 +260,11 @@ export default function Home() {
 
     today = yyyy + '-' + mm + '-' + dd;
 
-    console.log(today)
     return today;
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} lang='DE'>
       <Head>
         <title>droneshots heidelberg</title>
         <meta name="description" content="Professionelle Drohnenaufnahmen" />
@@ -318,7 +310,7 @@ export default function Home() {
               <button className={styles.sliderButton} onClick={() => updateVid(-1)}>
                 &#x25C0;
               </button>
-              <iframe className={styles.vid} id="sliderVid" src="https://www.youtube.com/embed/kTWoeqPXpuo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe className={styles.vid} title='slidervideos' id="sliderVid" src="https://www.youtube.com/embed/kTWoeqPXpuo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <button className={styles.sliderButton} onClick={() => updateVid(1)}>
                 &#x25B6;
               </button>
@@ -360,15 +352,15 @@ export default function Home() {
             {/* <form action="/api/form" method="POST" className={styles.form}> */}
             <h1>KONTAKT</h1>
             <div className={styles.formRow}>
-              <label>NAME *</label>
+              <label htmlFor='name'>NAME *</label>
               <input type="text" name="name" required placeholder='Geben sie ihren Namen an' />
             </div>
             <div className={styles.formRow}>
-              <label>EMAIL *</label>
+              <label htmlFor='email'>EMAIL *</label>
               <input type="email" name="email" required placeholder='Geben sie ihre Email an' />
             </div>
             <div className={styles.formRow}>
-              <label>TELEFON *</label>
+              <label htmlFor='tel'>TELEFON *</label>
               <input type="tel" name="phone" pattern="+49[7-9]{2}-[0-9]{3}-[0-9]{4}" required placeholder='Geben sie ihre Nummer an' />
             </div>
             <div className={styles.formRow}>
@@ -379,7 +371,7 @@ export default function Home() {
               </select>
             </div>
             <div className={styles.formRow}>
-              <label>PROJEKTDATUM</label>
+              <label htmlFor='date'>PROJEKTDATUM</label>
               <input type="checkbox" checked={hasdate} onChange={(e) => setHasdate(e.target.checked)} name="hasdate" />
               {
                 hasdate ? (
@@ -390,7 +382,7 @@ export default function Home() {
               }
             </div>
             <div className={styles.formArea}>
-              <label>ERZÄHLEN SIE UNS ÜBER IHRE IDEE *</label>
+              <label htmlFor='message'>ERZÄHLEN SIE UNS ÜBER IHRE IDEE *</label>
               <textarea name="message" required placeholder="Schreiben sie hier"></textarea>
             </div>
             <button type="submit">Send</button>
@@ -513,7 +505,7 @@ export default function Home() {
                 <button className={styles.sliderButton} onClick={() => updateSlider(-1)}>
                   &#x25C0;
                 </button>
-                <img src="/photos/cinelog" id="sliderImg" style={{ borderRadius: "10px", backgroundColor: "transparent" }} />
+                <img alt="sliderDrones" src="/photos/cinelog35.png" id="sliderImg" style={{ borderRadius: "10px", backgroundColor: "transparent" }} />
                 <button className={styles.sliderButton} onClick={() => updateSlider(1)}>
                   &#x25B6;
                 </button>
@@ -531,7 +523,7 @@ export default function Home() {
                 <button className={styles.sliderButton} onClick={() => updateGoProSlider(-1)}>
                   &#x25C0;
                 </button>
-                <img src="https://i.imgur.com/LzVTLb3.png" id="goproSliderImg" />
+                <img alt="sliderCamera" src="https://i.imgur.com/LzVTLb3.png" id="goproSliderImg" />
                 <button className={styles.sliderButton} onClick={() => updateGoProSlider(1)}>
                   &#x25B6;
                 </button>
