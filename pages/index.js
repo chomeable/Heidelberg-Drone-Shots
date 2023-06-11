@@ -118,7 +118,7 @@ export default function Home() {
 
   const videos = [
     {
-      vid: "https://www.youtube.com/embed/kTWoeqPXpuo",
+      vid: "https://www.youtube.com/embed/dtHrlLrNZ54",
 
     },
     {
@@ -311,7 +311,7 @@ export default function Home() {
               <button className={styles.sliderButton} onClick={() => updateVid(-1)}>
                 &#x25C0;
               </button>
-              <iframe className={styles.vid} title='slidervideos' id="sliderVid" src="https://www.youtube.com/embed/kTWoeqPXpuo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe className={styles.vid} title='slidervideos' id="sliderVid" src="https://www.youtube.com/embed/dtHrlLrNZ54" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               <button className={styles.sliderButton} onClick={() => updateVid(1)}>
                 &#x25B6;
               </button>
@@ -536,7 +536,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </main>
+      </main >
 
       <footer className={styles.footer}>
         {/* <Link
